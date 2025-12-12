@@ -1,0 +1,22 @@
+idf_component_register(
+    SRCS
+        "src/main.cpp"
+        "src/tasks.cpp"
+        "src/comms.cpp"
+        "src/control.cpp"
+        "src/attacks.cpp"
+        "src/sntp_time.c"
+        "src/wifi_connect.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        esp_timer
+        esp_wifi
+        esp_event
+        esp_netif
+        nvs_flash
+        mbedtls
+    PRIV_REQUIRES
+        wpa_supplicant
+        esp_driver_gpio
+)

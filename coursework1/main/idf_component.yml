@@ -1,0 +1,10 @@
+version: "1.0.0"
+
+dependencies:
+  idf: ">=5.0.0"
+
+  # MQTT
+  espressif/mqtt: "*"
+
+  # RadioLib
+  jgromes/radiolib: "*"

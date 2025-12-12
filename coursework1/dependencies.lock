@@ -1,0 +1,32 @@
+dependencies:
+  espressif/mqtt:
+    component_hash: ffdad5659706b4dc14bc63f8eb73ef765efa015bf7e9adf71c813d52a2dc9342
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.0
+  idf:
+    source:
+      type: idf
+    version: 5.3.4
+  jgromes/radiolib:
+    component_hash: ef771662860161bd141c57ffba342b3785c1384804ce3b0545515186332343ac
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 7.4.0
+direct_dependencies:
+- espressif/mqtt
+- idf
+- jgromes/radiolib
+manifest_hash: ca5f5a4ee9733ef67f77e5bbfabd1a4642a85efc407570f364594b7344098492
+target: esp32
+version: 2.0.0
