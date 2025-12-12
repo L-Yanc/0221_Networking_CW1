@@ -1,13 +1,3 @@
-// tasks.cpp
-//
-// Implements all 4 FreeRTOS tasks:
-//  - physics_task:   integrates LocalState at 50 Hz
-//  - flock_task:     computes ControlCmd from neighbours at 10 Hz
-//  - radio_task:     builds and sends LoRa packets at ~4 Hz
-//  - telemetry_task: logs state + metrics at ~2 Hz
-//
-// This module owns the single LocalState instance and a mutex to protect it.
-
 #include "tasks.hpp"
 
 extern "C" {
@@ -28,54 +18,40 @@ extern "C" {
 #include "comms.hpp"
 #include "attacks.hpp"
 
-#include <cstring>     // for std::memcpy
-#include <inttypes.h>  // optional, if you ever use PRIu32 etc.
+#include <cstring>
+#include <inttypes.h>
 
 
 namespace tasks {
 
     static const char* TAG = "TASKS";
 
-    // --------------------------------------------------------
-    // Shared state and synchronisation
-    // --------------------------------------------------------
-
-    // Global local state for this drone
     static control::LocalState g_state;
 
-    // Mutex protecting g_state
     static SemaphoreHandle_t s_state_mutex = nullptr;
-
-    // Queue for commands from flock_task -> physics_task
-    // Single-slot queue (latest command wins) is usually enough
     static QueueHandle_t s_cmd_queue = nullptr;
 
-    // Node ID (derived from WiFi MAC once)
     static uint8_t s_node_id[6] = {0};
-    static bool    s_node_id_initialised = false;
+    static bool s_node_id_initialised = false;
 
-    // Helper RAII lock for g_state
     class StateLock {
     public:
-        StateLock()  { xSemaphoreTake(s_state_mutex, portMAX_DELAY); }
+        StateLock() { xSemaphoreTake(s_state_mutex, portMAX_DELAY); }
         ~StateLock() { xSemaphoreGive(s_state_mutex); }
     };
 
-    // Get a copy of the current state (used by flock, radio, telemetry)
     static control::LocalState get_state_snapshot()
     {
         StateLock lock;
         return g_state;
     }
 
-    // Update the global state (only physics_task should call this)
     static void set_state(const control::LocalState& st)
     {
         StateLock lock;
         g_state = st;
     }
 
-    // Ensure we have a node_id populated from WiFi MAC
     static void ensure_node_id_initialised()
     {
         if (s_node_id_initialised) {
@@ -86,7 +62,6 @@ namespace tasks {
         esp_err_t err = esp_wifi_get_mac(WIFI_IF_STA, mac);
         if (err != ESP_OK) {
             ESP_LOGW(TAG, "esp_wifi_get_mac failed (%d), using fallback node_id", err);
-            // Fallback: some arbitrary but non-zero ID
             uint8_t fallback[6] = {0xDE, 0xAD, 0xBE, 0xEF, 0x00, 0x01};
             std::memcpy(s_node_id, fallback, sizeof(s_node_id));
         } else {
@@ -211,21 +186,19 @@ namespace tasks {
             control::LocalState self = get_state_snapshot();
             auto neighbours = comms::get_neighbour_snapshot(now_ms);
 
-            // Compute flocking metrics for logging / report
-            control::FlockMetrics metrics = control::compute_flock_metrics(self, neighbours);
+            // Compute simple neighbour count for logging
+            int neigh_count = static_cast<int>(neighbours.size());
 
-            // Log the existing telemetry (unchanged)
+            // Log telemetry without flock metrics
             ESP_LOGI(TAG,
-                     "telemetry: x=%u y=%u z=%u v=(%d,%d,%d) neigh=%d minSep=%.1f align=%.2f",
-                     (unsigned) self.x_mm,
-                     (unsigned) self.y_mm,
-                     (unsigned) self.z_mm,
-                     (int) self.vx_mm_s,
-                     (int) self.vy_mm_s,
-                     (int) self.vz_mm_s,
-                     (int) metrics.neighbour_count,
-                     metrics.min_separation_mm,
-                     metrics.heading_alignment);
+                    "telemetry: x=%u y=%u z=%u v=(%d,%d,%d) neigh=%d",
+                    (unsigned) self.x_mm,
+                    (unsigned) self.y_mm,
+                    (unsigned) self.z_mm,
+                    (int) self.vx_mm_s,
+                    (int) self.vy_mm_s,
+                    (int) self.vz_mm_s,
+                    neigh_count);
 
 
         }

@@ -1,10 +1,3 @@
-// control.cpp
-//
-// Implementation of control logic:
-//  - Physics integration
-//  - Flocking command generation
-//  - Flocking metrics
-
 #include "control.hpp"
 
 #include <cmath>
@@ -15,10 +8,6 @@
 #include "comms.hpp"
 
 namespace control {
-
-    // --------------------------------------------------------
-    // Helpers
-    // --------------------------------------------------------
 
     static float clamp_float(float v, float lo, float hi)
     {
@@ -40,8 +29,6 @@ namespace control {
         return static_cast<uint16_t>(y);
     }
 
-    // Compute smallest signed yaw error (target - current) in centidegrees
-    // Result is in range [-18000, 18000]
     static int32_t yaw_error_cd(uint16_t current_cd, uint16_t target_cd)
     {
         int32_t err = static_cast<int32_t>(target_cd) - static_cast<int32_t>(current_cd);
@@ -50,13 +37,8 @@ namespace control {
         return err;
     }
 
-    // --------------------------------------------------------
-    // Physics
-    // --------------------------------------------------------
-
     void clamp_state(LocalState& st)
     {
-        // clamp position
         st.x_mm = static_cast<uint32_t>(
             clamp_int32(static_cast<int32_t>(st.x_mm), WORLD_MIN_MM, WORLD_MAX_MM)
         );
@@ -67,7 +49,6 @@ namespace control {
             clamp_int32(static_cast<int32_t>(st.z_mm), WORLD_MIN_MM, WORLD_MAX_MM)
         );
 
-        // clamp velocity magnitude
         float vx = static_cast<float>(st.vx_mm_s);
         float vy = static_cast<float>(st.vy_mm_s);
         float vz = static_cast<float>(st.vz_mm_s);

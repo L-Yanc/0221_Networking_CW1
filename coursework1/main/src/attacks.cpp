@@ -1,16 +1,3 @@
-// attacks.cpp
-//
-// Implementation of attack controller.
-// Modes (from config.hpp):
-//  - None
-//  - Replay      : resend old valid packets (for replay attacks)
-//  - Ghost       : inject fake drones based on neighbour info
-//  - FalseData   : corrupt positions/velocities but keep valid CMAC
-//  - FastTx      : increase effective TX rate (within duty cycle)
-//  - InvalidCmac : deliberately break MAC_tag (requires small hook in comms)
-//
-// All these operate in terms of comms::LoraPacket and comms/neighbour APIs.
-
 #include "attacks.hpp"
 
 extern "C" {
@@ -29,13 +16,8 @@ namespace attacks {
 
     static const char* TAG = "ATTACKS";
 
-    // --------------------------------------------------------
-    // Global state
-    // --------------------------------------------------------
-
     static AttackMode s_mode = AttackMode::None;
 
-    // For replay attacks: store a small ring buffer of recently sent packets
     struct ReplayBufferEntry {
         comms::LoraPacket pkt{};
         bool in_use = false;
@@ -45,7 +27,6 @@ namespace attacks {
     static ReplayBufferEntry s_replay_buffer[REPLAY_BUFFER_SIZE];
     static int s_replay_index = 0;
 
-    // For FastTx: last time we sent (ms)
     static uint32_t s_last_fasttx_ms = 0;
 
     // --------------------------------------------------------

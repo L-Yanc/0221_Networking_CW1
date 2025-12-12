@@ -1,10 +1,9 @@
-// wifi_connect.c
 #include "wifi_connect.h"
 
 // ------------------------------------------------------------ WiFi
 // 0 - Home WiFi
 // 1 - Eduroam
-#define USE_EDUROAM 0
+#define USE_EDUROAM 1
 
 #if USE_EDUROAM
 #define WIFI_SSID "eduroam"

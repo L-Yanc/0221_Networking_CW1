@@ -1,12 +1,3 @@
-// comms.cpp
-//
-// Implementation of communication layer
-// - LoRa radio init (RadioLib + EspHal)
-// - RX task
-// - neighbour table management
-// - CMAC helpers (mbedTLS AES-128 CMAC)
-// - packet pack / unpack (struct copy)
-
 #include "comms.hpp"
 
 extern "C" {
@@ -17,7 +8,6 @@ extern "C" {
 #include "esp_log.h"
 #include "esp_timer.h"
 
-// mbedTLS for CMAC
 #include "mbedtls/cipher.h"
 #include "mbedtls/cmac.h"
 
@@ -25,8 +15,6 @@ extern "C" {
 #include "esp_mac.h"
 }
 
-
-// RadioLib is C++
 #include "RadioLib.h"
 #include "EspHal.h"
 
@@ -42,23 +30,12 @@ namespace comms {
 
     static const char* TAG = "COMMS";
 
-    // --------------------------------------------------------
-    // TEAM_KEY definition (declared in config.hpp)
-    // Replace with your real 16 byte AES key before testing
-    // with your friend, share exactly these 16 bytes
-    // --------------------------------------------------------
     const uint8_t TEAM_KEY[16] = {
         0x00, 0x01, 0x02, 0x03,
         0x04, 0x05, 0x06, 0x07,
         0x08, 0x09, 0x0A, 0x0B,
         0x0C, 0x0D, 0x0E, 0x0F,
     };
-
-    // --------------------------------------------------------
-    // LoRa / RadioLib pins
-    // Adjust these if your hardware uses different pins
-    // (example mapping for a Heltec style ESP32 LoRa board)
-    // --------------------------------------------------------
 
 #ifndef LORA_SPI_SCK
     #define LORA_SPI_SCK   GPIO_NUM_5
@@ -79,20 +56,14 @@ namespace comms {
     #define LORA_RST       GPIO_NUM_14
 #endif
 #ifndef LORA_BUSY
-    #define LORA_BUSY      GPIO_NUM_NC
+    #define LORA_BUSY GPIO_NUM_NC
 #endif
 
-    // RadioLib HAL and radio objects
     static EspHal s_hal(LORA_SPI_SCK, LORA_SPI_MISO, LORA_SPI_MOSI);
     static Module s_module(&s_hal, LORA_CS, LORA_DIO0, LORA_RST, LORA_BUSY);
     static SX1276 s_radio(&s_module);
 
-    // RX task handle
     static TaskHandle_t s_rx_task_handle = nullptr;
-
-    // --------------------------------------------------------
-    // Neighbour table internals
-    // --------------------------------------------------------
 
     static NeighbourEntry s_neighbours[MAX_NEIGHBOURS];
     static SemaphoreHandle_t s_neighbour_mutex = nullptr;
@@ -110,10 +81,6 @@ namespace comms {
     // CMAC helpers
     // --------------------------------------------------------
 
-        // --------------------------------------------------------
-    // CMAC helpers - AES-128 CMAC over first (PACKET_LEN_BYTES - MAC_TAG_LEN) bytes
-    // Truncate to 4 bytes, compatible with friend if TEAM_KEY and packet layout match
-    // --------------------------------------------------------
     bool compute_cmac(const uint8_t* data, size_t len, uint8_t tag_out[MAC_TAG_LEN])
     {
         // full 16-byte CMAC buffer

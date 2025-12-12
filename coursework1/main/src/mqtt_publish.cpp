@@ -1,7 +1,3 @@
-// mqtt_publish.cpp
-//
-// Simple MQTT client for publishing telemetry
-
 #include "mqtt_publish.hpp"
 #include <mqtt_client.h>
 #include <esp_log.h>

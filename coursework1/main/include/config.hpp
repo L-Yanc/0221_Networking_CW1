@@ -15,8 +15,7 @@ inline constexpr uint8_t TEAM_ID            = 0;
 inline constexpr uint8_t PROTOCOL_VERSION   = 1;
 
 // ------------------------------------------------------------
-// World Space (100m × 100m × 100m cube in mm, all positive coordinates)
-// Matches coursework spec + your friend's implementation
+// World Space (100m × 100m × 100m)
 // ------------------------------------------------------------
 inline constexpr int32_t WORLD_MIN_MM       = 0;
 inline constexpr int32_t WORLD_MAX_MM       = 100000;   // 100m
@@ -51,7 +50,7 @@ inline constexpr uint32_t NEIGHBOUR_TIMEOUT_MS = 10000;  // 5 seconds before sta
 // Individual Attack Toggles (set to 1 to enable, 0 to disable)
 
 // ------------------------------------------------------------
-// LoRa Configuration (based on Standard document)
+// LoRa Configuration (based on the COMP0220 Standard document)
 // ------------------------------------------------------------
 inline constexpr uint32_t LORA_FREQ_HZ      = 868100000;  // 868.1 MHz
 inline constexpr uint8_t  LORA_SF           = 9;
