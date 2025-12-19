@@ -7,12 +7,12 @@
 
 #if USE_EDUROAM
 #define WIFI_SSID "eduroam"
-#define EDUROAM_IDENTITY "zcablya@ucl.ac.uk"
-#define EDUROAM_USERNAME "zcablya@ucl.ac.uk"
-#define EDUROAM_PASSWORD "Onemsiz34ucl--"
+#define EDUROAM_IDENTITY "@ucl.ac.uk" // add email
+#define EDUROAM_USERNAME "@ucl.ac.uk" // add email
+#define EDUROAM_PASSWORD "" // add password
 #else
-#define WIFI_SSID "67CB Hyperoptic Fibre Broadband"
-#define WIFI_PASSWORD "WR2Wu5gMS3US"
+#define WIFI_SSID "" // add home wifi ssid
+#define WIFI_PASSWORD "" // add home wifi password
 #endif
 
 #define WIFI_CONNECT_TIMEOUT_MS 30000
