@@ -1,0 +1,1276 @@
+Executing action: monitor
+Serial port COM4
+Connecting....
+Detecting chip type... ESP32
+Running idf_monitor in directory 'C:\Users\laray\OneDrive - University College London\UCL 3\0220_Networking_CW1\coursework1'
+Executing "C:\Users\laray\.espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:\Users\laray\esp\v5.3\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 'C:\Users\laray\OneDrive - University College London\UCL 3\0220_Networking_CW1\coursework1\build\coursework1.elf' --force-color -m 'C:\Users\laray\.espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe' 'C:\Users\laray\esp\v5.3\esp-idf\tools\idf.py'"...
+ets Jun  8 2016 00:22:57
+
+
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+
+configsip: 188777542, SPIWP:0xee
+
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+
+mode:DIO, clock div:2
+
+load:0x3fff0030,len:6260
+
+load:0x40078000,len:15660
+
+load:0x40080400,len:4
+
+load:0x40080404,len:3904
+
+entry 0x40080640
+
+I (30) boot: ESP-IDF v5.3.4-246-gd94ddc0745-dirty 2nd stage bootloader
+
+I (30) boot: compile time Dec 12 2025 15:44:07
+
+I (30) boot: Multicore bootloader
+
+I (33) boot: chip revision: v1.1
+
+I (36) boot.esp32: SPI Speed      : 40MHz
+
+I (39) boot.esp32: SPI Mode       : DIO
+
+I (43) boot.esp32: SPI Flash Size : 2MB
+
+I (47) boot: Enabling RNG early entropy source...
+
+I (51) boot: Partition Table:
+
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+
+I (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+
+I (80) boot: End of partition table
+
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1ef88h (126856) map
+
+I (134) esp_image: segment 1: paddr=0002efb0 vaddr=3ffb0000 size=01068h (  4200) load
+
+I (136) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=a5228h (676392) map
+
+I (369) esp_image: segment 3: paddr=000d5250 vaddr=3ffb1068 size=02f74h ( 12148) load
+
+I (374) esp_image: segment 4: paddr=000d81cc vaddr=40080000 size=17e24h ( 97828) load
+
+I (425) boot: Loaded app from partition at offset 0x10000
+
+I (425) boot: Disabling RNG early entropy source...
+
+I (435) cpu_start: Multicore app
+
+I (443) cpu_start: Pro cpu start user code
+
+I (444) cpu_start: cpu freq: 160000000 Hz
+
+I (444) app_init: Application information:
+
+I (444) app_init: Project name:     coursework1
+
+I (448) app_init: App version:      6846b42-dirty
+
+I (452) app_init: Compile time:     Dec 12 2025 15:42:14
+
+I (457) app_init: ELF file SHA256:  95b93ac22...
+
+I (462) app_init: ESP-IDF:          v5.3.4-246-gd94ddc0745-dirty
+
+I (467) efuse_init: Min chip rev:     v0.0
+
+I (471) efuse_init: Max chip rev:     v3.99 
+
+I (475) efuse_init: Chip rev:         v1.1
+
+I (479) heap_init: Initializing. RAM available for dynamic allocation:
+
+I (485) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+
+I (490) heap_init: At 3FFB8AC8 len 00027538 (157 KiB): DRAM
+
+I (496) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+
+I (501) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+
+I (507) heap_init: At 40097E24 len 000081DC (32 KiB): IRAM
+
+I (513) spi_flash: detected chip: gd
+
+I (515) spi_flash: flash io: dio
+
+W (518) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+
+I (532) main_task: Started on CPU0
+
+I (542) main_task: Calling app_main()
+
+I (542) MAIN: Starting COMP0221 CW node...
+
+I (572) MAIN: NVS initialised
+
+I (592) wifi:wifi driver task: 3ffc0ca0, prio:23, stack:6656, core=0
+
+I (602) wifi:wifi firmware version: 339f997
+
+I (602) wifi:wifi certification version: v7.0
+
+I (612) wifi:config NVS flash: enabled
+
+I (612) wifi:config nano formating: disabled
+
+I (612) wifi:Init data frame dynamic rx buffer num: 32
+
+I (612) wifi:Init static rx mgmt buffer num: 5
+
+I (622) wifi:Init management short buffer num: 32
+
+I (622) wifi:Init dynamic tx buffer num: 32
+
+I (632) wifi:Init static rx buffer size: 1600
+
+I (632) wifi:Init static rx buffer num: 10
+
+I (632) wifi:Init dynamic rx buffer num: 32
+
+I (642) wifi_init: rx ba win: 6
+
+I (642) wifi_init: accept mbox: 6
+
+I (642) wifi_init: tcpip mbox: 32
+
+I (652) wifi_init: udp mbox: 6
+
+I (652) wifi_init: tcp mbox: 6
+
+I (652) wifi_init: tcp tx win: 5760
+
+I (662) wifi_init: tcp rx win: 5760
+
+I (662) wifi_init: tcp mss: 1440
+
+I (662) wifi_init: WiFi IRAM OP enabled
+
+I (672) wifi_init: WiFi RX IRAM OP enabled
+
+I (672) wifi:Set ps type: 0, coexist: 0
+
+
+
+I (672) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06
+
+I (752) wifi:mode : sta (f0:24:f9:af:32:88)
+
+I (752) wifi:enable tsf
+
+I (752) WIFI_CONNECT: Connecting to SSID: 67CB Hyperoptic Fibre Broadband...
+
+I (772) wifi:new:<9,0>, old:<1,0>, ap:<255,255>, sta:<9,0>, prof:1, snd_ch_cfg:0x0
+
+I (772) wifi:state: init -> auth (0xb0)
+
+I (772) wifi:state: auth -> assoc (0x0)
+
+I (782) wifi:state: assoc -> run (0x10)
+
+I (812) wifi:connected with 67CB Hyperoptic Fibre Broadband, aid = 2, channel 9, BW20, bssid = cc:ed:21:c3:31:31
+
+I (812) wifi:security: WPA2-PSK, phy: bgn, rssi: -41
+
+I (822) wifi:pm start, type: 0
+
+
+
+I (822) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+
+I (822) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+
+I (852) wifi:<ba-add>idx:0 (ifx:0, cc:ed:21:c3:31:31), tid:0, ssn:0, winSize:64
+
+I (1832) esp_netif_handlers: sta ip: 192.168.1.126, mask: 255.255.255.0, gw: 192.168.1.1
+
+I (1832) WIFI_CONNECT: Got IP: 192.168.1.126
+
+I (1832) WIFI_CONNECT: Wi-Fi Connected.
+
+I (1832) MAIN: Syncing time via SNTP...
+
+I (1832) SNTP_TIME: Initializing SNTP...
+
+I (2962) wifi:<ba-add>idx:1 (ifx:0, cc:ed:21:c3:31:31), tid:7, ssn:0, winSize:64
+
+I (5842) SNTP_TIME: Time successfully synchronized
+
+I (5842) MAIN: SNTP time sync complete
+
+I (5842) MQTT: MQTT client started
+
+I (5842) ATTACKS: Attack mode set to 0
+
+I (5842) COMMS: Initialising radio and neighbour table
+
+I (5842) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5852) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5862) gpio: GPIO[27]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5872) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5882) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5892) gpio: GPIO[14]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+
+I (5902) COMMS: radio_init: RadioLib begin OK (868.100 MHz, 250.0 kHz, SF9)
+
+I (5902) COMMS: start_radio_rx: RX task created
+
+I (5912) TASKS: Creating tasks and queues
+
+I (5912) TASKS: physics_task started
+
+I (5912) TASKS: flock_task started
+
+I (5922) TASKS: radio_task started
+
+I (5922) TASKS: telemetry_task started
+
+I (5922) MAIN: CONFIG PHYSICS_HZ=50 FLOCK_HZ=10 RADIO_HZ=1 TELEMETRY_HZ=2
+
+I (5932) main_task: Returned from app_main()
+
+I (6422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (6422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=0 mqtt_fail=1
+
+I (6912) TASKS: PHYSICS exp_us=6406751 start_us=6399614 end_us=6399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=50 yaw_cd=0 v=(0,0,0)
+
+I (6922) TASKS: RADIO exp_us=6413005 start_us=6409648 end_us=6409729 exec_us=81 lat_us=-3357 jitter_us=0 p_us=1000000 neigh=0 age_max_ms=0
+
+I (6922) TASKS: FLOCK exp_us=6409876 start_us=6410386 end_us=6410581 exec_us=195 lat_us=510 jitter_us=756 p_us=100000 neigh=0 age_max_ms=0 cmd_v=(0,0,0) cmd_yaw_rate=0
+
+I (6922) TASKS: TELE exp_us=6416474 start_us=6413489 end_us=6413574 exec_us=85 lat_us=-2985 jitter_us=3764 p_us=500000 x=45000 y=51000 z=10000 v=(0,0,0) yaw_cd=0 seq=50 neigh=0 mqtt_ok=0 mqtt_exec_us=29
+
+I (7422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (7422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=0 mqtt_fail=2
+
+I (7742) MQTT: MQTT_EVENT_CONNECTED
+
+I (7912) TASKS: PHYSICS exp_us=7406751 start_us=7399614 end_us=7399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=100 yaw_cd=0 v=(0,0,0)
+
+I (7922) TASKS: RADIO exp_us=7413005 start_us=7409652 end_us=7409757 exec_us=105 lat_us=-3353 jitter_us=4 p_us=1000000 neigh=0 age_max_ms=0
+
+I (7922) TASKS: FLOCK exp_us=7409876 start_us=7410378 end_us=7410509 exec_us=131 lat_us=502 jitter_us=748 p_us=100000 neigh=0 age_max_ms=0 cmd_v=(0,0,0) cmd_yaw_rate=0
+
+I (7922) TASKS: TELE exp_us=7416474 start_us=7413892 end_us=7419460 exec_us=5568 lat_us=-2582 jitter_us=4171 p_us=500000 x=45000 y=51000 z=10000 v=(0,0,0) yaw_cd=0 seq=100 neigh=0 mqtt_ok=1 mqtt_exec_us=5514
+
+I (8422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (8422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (8912) TASKS: PHYSICS exp_us=8406751 start_us=8399621 end_us=8399659 exec_us=38 lat_us=-7130 jitter_us=7 p_us=20000 seq=150 yaw_cd=0 v=(0,0,0)
+
+I (8922) TASKS: RADIO exp_us=8413005 start_us=8409668 end_us=8409753 exec_us=85 lat_us=-3337 jitter_us=16 p_us=1000000 neigh=0 age_max_ms=0
+
+I (8922) TASKS: FLOCK exp_us=8409876 start_us=8410382 end_us=8410461 exec_us=79 lat_us=506 jitter_us=752 p_us=100000 neigh=0 age_max_ms=0 cmd_v=(0,0,0) cmd_yaw_rate=0
+
+I (8922) TASKS: TELE exp_us=8416474 start_us=8413914 end_us=8419406 exec_us=5492 lat_us=-2560 jitter_us=4193 p_us=500000 x=45000 y=51000 z=10000 v=(0,0,0) yaw_cd=0 seq=150 neigh=0 mqtt_ok=1 mqtt_exec_us=5433
+
+I (9422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (9422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (9912) TASKS: PHYSICS exp_us=9406751 start_us=9399614 end_us=9399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=200 yaw_cd=0 v=(0,0,0)
+
+I (9922) TASKS: RADIO exp_us=9413005 start_us=9409656 end_us=9409753 exec_us=97 lat_us=-3349 jitter_us=-12 p_us=1000000 neigh=0 age_max_ms=0
+
+I (9922) TASKS: FLOCK exp_us=9409876 start_us=9410378 end_us=9410469 exec_us=91 lat_us=502 jitter_us=748 p_us=100000 neigh=0 age_max_ms=0 cmd_v=(0,0,0) cmd_yaw_rate=0
+
+I (9932) TASKS: TELE exp_us=9416474 start_us=9413973 end_us=9420363 exec_us=6390 lat_us=-2501 jitter_us=4240 p_us=500000 x=45000 y=51000 z=10000 v=(0,0,0) yaw_cd=0 seq=200 neigh=0 mqtt_ok=1 mqtt_exec_us=6330
+
+I (10422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (10422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (10912) TASKS: PHYSICS exp_us=10406751 start_us=10399614 end_us=10399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=250 yaw_cd=0 v=(0,0,0)
+
+I (10922) TASKS: RADIO exp_us=10413005 start_us=10409652 end_us=10409737 exec_us=85 lat_us=-3353 jitter_us=-4 p_us=1000000 neigh=0 age_max_ms=0
+
+I (10922) TASKS: FLOCK exp_us=10409876 start_us=10410374 end_us=10410458 exec_us=84 lat_us=498 jitter_us=744 p_us=100000 neigh=0 age_max_ms=0 cmd_v=(0,0,0) cmd_yaw_rate=0
+
+I (10932) TASKS: TELE exp_us=10416474 start_us=10414561 end_us=10420305 exec_us=5744 lat_us=-1913 jitter_us=4828 p_us=500000 x=45000 y=51000 z=10000 v=(0,0,0) yaw_cd=0 seq=250 neigh=0 mqtt_ok=1 mqtt_exec_us=5684
+
+I (11422) TASKS: STAB neigh=0 dist_cent_mm=0 min_sep_mm=0 heading_cos_x1000=0
+
+I (11422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (11712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=1 pos=(50606,50000,1000)
+
+I (11912) TASKS: PHYSICS exp_us=11406751 start_us=11399614 end_us=11399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=300 yaw_cd=32400 v=(264,-47,-421)
+
+I (11922) TASKS: RADIO exp_us=11413005 start_us=11409624 end_us=11409707 exec_us=83 lat_us=-3381 jitter_us=-28 p_us=1000000 neigh=1 age_max_ms=208
+
+I (11922) TASKS: FLOCK exp_us=11409876 start_us=11415547 end_us=11415724 exec_us=177 lat_us=5671 jitter_us=5917 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(264,-47,-421) cmd_yaw_rate=-18000
+
+I (11942) TASKS: TELE exp_us=11416474 start_us=11431696 end_us=11437191 exec_us=5495 lat_us=15222 jitter_us=21975 p_us=500000 x=45055 y=51000 z=9912 v=(264,-47,-421) yaw_cd=32040 seq=301 neigh=1 mqtt_ok=1 mqtt_exec_us=5429
+
+I (12212) COMMS_RX: TX: periodic packet seq=0 sent at 11400 ms
+
+I (12422) TASKS: STAB neigh=1 dist_cent_mm=10321 min_sep_mm=10321 heading_cos_x1000=528
+
+I (12422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (12912) TASKS: PHYSICS exp_us=12406751 start_us=12399621 end_us=12399663 exec_us=42 lat_us=-7130 jitter_us=7 p_us=20000 seq=350 yaw_cd=28495 v=(264,-49,-421)
+
+I (12922) TASKS: RADIO exp_us=12413005 start_us=12409625 end_us=12409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (12922) TASKS: FLOCK exp_us=12409876 start_us=12415716 end_us=12415905 exec_us=189 lat_us=5840 jitter_us=6101 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(264,-49,-421) cmd_yaw_rate=-90
+
+I (12942) TASKS: TELE exp_us=12416474 start_us=12431696 end_us=12437151 exec_us=5455 lat_us=15222 jitter_us=21861 p_us=500000 x=45305 y=51000 z=9512 v=(264,-49,-421) yaw_cd=28494 seq=351 neigh=1 mqtt_ok=1 mqtt_exec_us=5402
+
+I (13422) TASKS: STAB neigh=1 dist_cent_mm=9851 min_sep_mm=9851 heading_cos_x1000=528
+
+I (13422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (13912) TASKS: PHYSICS exp_us=13406751 start_us=13399614 end_us=13399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=400 yaw_cd=28445 v=(256,-49,-408)
+
+I (13922) TASKS: RADIO exp_us=13413005 start_us=13409625 end_us=13409703 exec_us=78 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (13922) TASKS: FLOCK exp_us=13409876 start_us=13410379 end_us=13410570 exec_us=191 lat_us=503 jitter_us=764 p_us=100000 neigh=1 age_max_ms=2209 cmd_v=(254,-49,-406) cmd_yaw_rate=-65
+
+I (13942) TASKS: TELE exp_us=13416474 start_us=13410644 end_us=13431594 exec_us=20950 lat_us=-5830 jitter_us=797 p_us=500000 x=45550 y=50995 z=9120 v=(256,-49,-408) yaw_cd=28445 seq=400 neigh=1 mqtt_ok=1 mqtt_exec_us=20896
+
+I (14422) TASKS: STAB neigh=1 dist_cent_mm=9389 min_sep_mm=9389 heading_cos_x1000=527
+
+I (14422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (14912) TASKS: PHYSICS exp_us=14406751 start_us=14399614 end_us=14399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=450 yaw_cd=28395 v=(244,-49,-389)
+
+I (14922) TASKS: RADIO exp_us=14413005 start_us=14409625 end_us=14409710 exec_us=85 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (14922) TASKS: FLOCK exp_us=14409876 start_us=14415669 end_us=14415857 exec_us=188 lat_us=5793 jitter_us=6054 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(243,-49,-387) cmd_yaw_rate=-60
+
+I (14942) TASKS: TELE exp_us=14416474 start_us=14431653 end_us=14437688 exec_us=6035 lat_us=15179 jitter_us=21814 p_us=500000 x=45774 y=50995 z=8743 v=(243,-49,-387) yaw_cd=28394 seq=451 neigh=1 mqtt_ok=1 mqtt_exec_us=5981
+
+I (15422) TASKS: STAB neigh=1 dist_cent_mm=8988 min_sep_mm=8988 heading_cos_x1000=529
+
+I (15422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (15912) TASKS: PHYSICS exp_us=15406751 start_us=15399614 end_us=15399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=500 yaw_cd=28345 v=(234,-49,-371)
+
+I (15922) TASKS: RADIO exp_us=15413005 start_us=15409625 end_us=15409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (15922) TASKS: FLOCK exp_us=15409876 start_us=15415765 end_us=15415948 exec_us=183 lat_us=5889 jitter_us=6150 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(233,-49,-370) cmd_yaw_rate=-50
+
+I (15942) TASKS: TELE exp_us=15416474 start_us=15431741 end_us=15437199 exec_us=5458 lat_us=15267 jitter_us=21906 p_us=500000 x=45974 y=50995 z=8393 v=(233,-49,-370) yaw_cd=28344 seq=501 neigh=1 mqtt_ok=1 mqtt_exec_us=5401
+
+I (16422) TASKS: STAB neigh=1 dist_cent_mm=8588 min_sep_mm=8588 heading_cos_x1000=530
+
+I (16422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (16912) TASKS: PHYSICS exp_us=16406751 start_us=16399621 end_us=16399652 exec_us=31 lat_us=-7130 jitter_us=-319 p_us=20000 seq=550 yaw_cd=28295 v=(224,-49,-354)
+
+I (16922) TASKS: RADIO exp_us=16413005 start_us=16409625 end_us=16409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (16922) TASKS: FLOCK exp_us=16409876 start_us=16415968 end_us=16416156 exec_us=188 lat_us=6092 jitter_us=6353 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(223,-49,-352) cmd_yaw_rate=-60
+
+I (16942) TASKS: TELE exp_us=16416474 start_us=16431948 end_us=16437432 exec_us=5484 lat_us=15474 jitter_us=22113 p_us=500000 x=46174 y=50995 z=8043 v=(223,-49,-352) yaw_cd=28294 seq=551 neigh=1 mqtt_ok=1 mqtt_exec_us=5427
+
+I (17422) TASKS: STAB neigh=1 dist_cent_mm=8201 min_sep_mm=8201 heading_cos_x1000=531
+
+I (17422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (17712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=2 pos=(49337,50267,3136)
+
+I (17912) TASKS: PHYSICS exp_us=17406751 start_us=17399614 end_us=17399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=600 yaw_cd=28185 v=(144,-35,-223)
+
+I (17922) TASKS: RADIO exp_us=17413005 start_us=17410161 end_us=17410248 exec_us=87 lat_us=-2844 jitter_us=536 p_us=1000000 neigh=1 age_max_ms=209
+
+I (17922) TASKS: FLOCK exp_us=17409876 start_us=17415762 end_us=17415951 exec_us=189 lat_us=5886 jitter_us=6147 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(144,-35,-222) cmd_yaw_rate=-165
+
+I (17942) TASKS: TELE exp_us=17416474 start_us=17431742 end_us=17437239 exec_us=5497 lat_us=15268 jitter_us=21903 p_us=500000 x=46352 y=50995 z=7756 v=(144,-35,-222) yaw_cd=28182 seq=601 neigh=1 mqtt_ok=1 mqtt_exec_us=5439
+
+I (18212) COMMS_RX: TX: periodic packet seq=1 sent at 17400 ms
+
+I (18422) TASKS: STAB neigh=1 dist_cent_mm=5442 min_sep_mm=5442 heading_cos_x1000=-998
+
+I (18422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (18912) TASKS: PHYSICS exp_us=18406751 start_us=18399614 end_us=18399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=650 yaw_cd=28120 v=(139,-35,-213)
+
+I (18922) TASKS: RADIO exp_us=18413005 start_us=18409625 end_us=18409711 exec_us=86 lat_us=-3380 jitter_us=-536 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (18922) TASKS: FLOCK exp_us=18409876 start_us=18415930 end_us=18416121 exec_us=191 lat_us=6054 jitter_us=6315 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(139,-35,-212) cmd_yaw_rate=-80
+
+I (18942) TASKS: TELE exp_us=18416474 start_us=18431921 end_us=18438518 exec_us=6597 lat_us=15447 jitter_us=22082 p_us=500000 x=46452 y=50995 z=7556 v=(139,-35,-212) yaw_cd=28119 seq=651 neigh=1 mqtt_ok=1 mqtt_exec_us=6539
+
+I (19422) TASKS: STAB neigh=1 dist_cent_mm=5222 min_sep_mm=5222 heading_cos_x1000=-998
+
+I (19422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (19912) TASKS: PHYSICS exp_us=19406751 start_us=19399614 end_us=19399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=700 yaw_cd=28070 v=(134,-35,-203)
+
+I (19922) TASKS: RADIO exp_us=19413005 start_us=19409625 end_us=19409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (19922) TASKS: FLOCK exp_us=19409876 start_us=19415677 end_us=19415861 exec_us=184 lat_us=5801 jitter_us=6062 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(134,-35,-202) cmd_yaw_rate=-85
+
+I (19942) TASKS: TELE exp_us=19416474 start_us=19431653 end_us=19436689 exec_us=5036 lat_us=15179 jitter_us=21818 p_us=500000 x=46552 y=50995 z=7356 v=(134,-35,-202) yaw_cd=28069 seq=701 neigh=1 mqtt_ok=1 mqtt_exec_us=4979
+
+I (20422) TASKS: STAB neigh=1 dist_cent_mm=5011 min_sep_mm=5011 heading_cos_x1000=-998
+
+I (20422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (20912) TASKS: PHYSICS exp_us=20406751 start_us=20399614 end_us=20399632 exec_us=18 lat_us=-7137 jitter_us=-7 p_us=20000 seq=750 yaw_cd=27790 v=(131,-35,-198)
+
+I (20922) TASKS: RADIO exp_us=20413005 start_us=20409625 end_us=20409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (20922) TASKS: FLOCK exp_us=20409876 start_us=20415765 end_us=20415957 exec_us=192 lat_us=5889 jitter_us=6150 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(-272,72,412) cmd_yaw_rate=-18000
+
+I (20942) TASKS: TELE exp_us=20416474 start_us=20431918 end_us=20437367 exec_us=5449 lat_us=15444 jitter_us=22083 p_us=500000 x=46610 y=51001 z=7258 v=(-272,72,412) yaw_cd=27430 seq=751 neigh=1 mqtt_ok=1 mqtt_exec_us=5391
+
+I (21422) TASKS: STAB neigh=1 dist_cent_mm=5028 min_sep_mm=5028 heading_cos_x1000=-998
+
+I (21422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (21912) TASKS: PHYSICS exp_us=21406751 start_us=21399614 end_us=21399632 exec_us=18 lat_us=-7137 jitter_us=0 p_us=20000 seq=800 yaw_cd=27465 v=(131,-36,-198)
+
+I (21922) TASKS: RADIO exp_us=21413005 start_us=21409625 end_us=21409715 exec_us=90 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (21922) TASKS: FLOCK exp_us=21409876 start_us=21415681 end_us=21415872 exec_us=191 lat_us=5805 jitter_us=6066 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(131,-36,-198) cmd_yaw_rate=2575
+
+I (21942) TASKS: TELE exp_us=21416474 start_us=21431744 end_us=21437226 exec_us=5482 lat_us=15270 jitter_us=21909 p_us=500000 x=46612 y=51015 z=7262 v=(131,-36,-198) yaw_cd=27516 seq=801 neigh=1 mqtt_ok=1 mqtt_exec_us=5420
+
+I (22422) TASKS: STAB neigh=1 dist_cent_mm=5045 min_sep_mm=5045 heading_cos_x1000=998
+
+I (22422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (22912) TASKS: PHYSICS exp_us=22406751 start_us=22399614 end_us=22399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=850 yaw_cd=26910 v=(131,-37,-199)
+
+I (22922) TASKS: RADIO exp_us=22413005 start_us=22409625 end_us=22409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (22922) TASKS: FLOCK exp_us=22409876 start_us=22415665 end_us=22415857 exec_us=192 lat_us=5789 jitter_us=6050 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(131,-37,-198) cmd_yaw_rate=5210
+
+I (22942) TASKS: TELE exp_us=22416474 start_us=22431771 end_us=22437280 exec_us=5509 lat_us=15297 jitter_us=21940 p_us=500000 x=46607 y=51030 z=7277 v=(131,-37,-198) yaw_cd=27014 seq=851 neigh=1 mqtt_ok=1 mqtt_exec_us=5427
+
+I (23422) TASKS: STAB neigh=1 dist_cent_mm=4997 min_sep_mm=4997 heading_cos_x1000=-997
+
+I (23422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (23712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=3 pos=(48822,50370,3945)
+
+I (23912) TASKS: PHYSICS exp_us=23406751 start_us=23399614 end_us=23399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=900 yaw_cd=23755 v=(-223,67,335)
+
+I (23922) TASKS: RADIO exp_us=23413005 start_us=23409624 end_us=23409707 exec_us=83 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (23922) TASKS: FLOCK exp_us=23409876 start_us=23415592 end_us=23415780 exec_us=188 lat_us=5716 jitter_us=5977 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-225,68,338) cmd_yaw_rate=-18000
+
+I (23942) TASKS: TELE exp_us=23416474 start_us=23431655 end_us=23436678 exec_us=5023 lat_us=15181 jitter_us=21820 p_us=500000 x=46571 y=51051 z=7336 v=(-225,68,338) yaw_cd=23395 seq=901 neigh=1 mqtt_ok=1 mqtt_exec_us=4961
+
+I (24212) COMMS_RX: TX: periodic packet seq=2 sent at 23400 ms
+
+I (24422) TASKS: STAB neigh=1 dist_cent_mm=4305 min_sep_mm=4305 heading_cos_x1000=999
+
+I (24422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (24912) TASKS: PHYSICS exp_us=24406751 start_us=24399614 end_us=24399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=950 yaw_cd=16355 v=(-243,72,368)
+
+I (24922) TASKS: RADIO exp_us=24413005 start_us=24409625 end_us=24409711 exec_us=86 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (24922) TASKS: FLOCK exp_us=24409876 start_us=24415678 end_us=24415862 exec_us=184 lat_us=5802 jitter_us=6063 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(-245,73,371) cmd_yaw_rate=-80
+
+I (24942) TASKS: TELE exp_us=24416474 start_us=24431567 end_us=24437031 exec_us=5464 lat_us=15093 jitter_us=21688 p_us=500000 x=46371 y=51101 z=7667 v=(-245,73,371) yaw_cd=16354 seq=951 neigh=1 mqtt_ok=1 mqtt_exec_us=5402
+
+I (25422) TASKS: STAB neigh=1 dist_cent_mm=4715 min_sep_mm=4715 heading_cos_x1000=999
+
+I (25422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (25912) TASKS: PHYSICS exp_us=25406751 start_us=25399618 end_us=25399656 exec_us=38 lat_us=-7133 jitter_us=4 p_us=20000 seq=1000 yaw_cd=16365 v=(-266,77,403)
+
+I (25922) TASKS: RADIO exp_us=25413005 start_us=25409625 end_us=25409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (25922) TASKS: FLOCK exp_us=25409876 start_us=25415718 end_us=25415901 exec_us=183 lat_us=5842 jitter_us=6103 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(-268,78,407) cmd_yaw_rate=65
+
+I (25942) TASKS: TELE exp_us=25416474 start_us=25431520 end_us=25437052 exec_us=5532 lat_us=15046 jitter_us=21681 p_us=500000 x=46135 y=51151 z=8023 v=(-268,78,407) yaw_cd=16366 seq=1001 neigh=1 mqtt_ok=1 mqtt_exec_us=5470
+
+I (26422) TASKS: STAB neigh=1 dist_cent_mm=5034 min_sep_mm=5034 heading_cos_x1000=999
+
+I (26422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (26912) TASKS: PHYSICS exp_us=26406751 start_us=26399614 end_us=26399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1050 yaw_cd=23580 v=(136,-39,-206)
+
+I (26922) TASKS: RADIO exp_us=26413005 start_us=26409625 end_us=26409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (26922) TASKS: FLOCK exp_us=26409876 start_us=26415246 end_us=26415458 exec_us=212 lat_us=5370 jitter_us=5631 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(-272,80,411) cmd_yaw_rate=-18000
+
+I (26942) TASKS: TELE exp_us=26416474 start_us=26431915 end_us=26437355 exec_us=5440 lat_us=15441 jitter_us=22084 p_us=500000 x=46095 y=51171 z=8063 v=(-272,80,411) yaw_cd=23220 seq=1051 neigh=1 mqtt_ok=1 mqtt_exec_us=5374
+
+I (27422) TASKS: STAB neigh=1 dist_cent_mm=5023 min_sep_mm=5023 heading_cos_x1000=-999
+
+I (27422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (27912) TASKS: PHYSICS exp_us=27406751 start_us=27399614 end_us=27399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1100 yaw_cd=27270 v=(136,-40,-205)
+
+I (27922) TASKS: RADIO exp_us=27413005 start_us=27409625 end_us=27409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (27922) TASKS: FLOCK exp_us=27409876 start_us=27415761 end_us=27415953 exec_us=192 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(-273,81,409) cmd_yaw_rate=-18000
+
+I (27942) TASKS: TELE exp_us=27416474 start_us=27431910 end_us=27437395 exec_us=5485 lat_us=15436 jitter_us=22075 p_us=500000 x=46090 y=51186 z=8043 v=(-273,81,409) yaw_cd=26910 seq=1101 neigh=1 mqtt_ok=1 mqtt_exec_us=5427
+
+I (28422) TASKS: STAB neigh=1 dist_cent_mm=5011 min_sep_mm=5011 heading_cos_x1000=-999
+
+I (28422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (28912) TASKS: PHYSICS exp_us=28406751 start_us=28399614 end_us=28399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=1150 yaw_cd=25455 v=(-274,83,409)
+
+I (28922) TASKS: RADIO exp_us=28413005 start_us=28409625 end_us=28409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (28922) TASKS: FLOCK exp_us=28409876 start_us=28415758 end_us=28415942 exec_us=184 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(138,-41,-206) cmd_yaw_rate=12010
+
+I (28942) TASKS: TELE exp_us=28416474 start_us=28431911 end_us=28437388 exec_us=5477 lat_us=15437 jitter_us=22076 p_us=500000 x=46057 y=51205 z=8071 v=(138,-41,-206) yaw_cd=25695 seq=1151 neigh=1 mqtt_ok=1 mqtt_exec_us=5416
+
+I (29422) TASKS: STAB neigh=1 dist_cent_mm=5000 min_sep_mm=5000 heading_cos_x1000=-999
+
+I (29422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (29712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=4 pos=(49032,50320,3635)
+
+I (29912) TASKS: PHYSICS exp_us=29406751 start_us=29399621 end_us=29399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=1200 yaw_cd=27585 v=(148,-44,-219)
+
+I (29922) TASKS: RADIO exp_us=29413005 start_us=29409624 end_us=29409706 exec_us=82 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (29922) TASKS: FLOCK exp_us=29409876 start_us=29415803 end_us=29415988 exec_us=185 lat_us=5927 jitter_us=6188 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(147,-44,-218) cmd_yaw_rate=1310
+
+I (29942) TASKS: TELE exp_us=29416474 start_us=29431779 end_us=29436849 exec_us=5070 lat_us=15305 jitter_us=21944 p_us=500000 x=46087 y=51215 z=7991 v=(147,-44,-218) yaw_cd=27611 seq=1201 neigh=1 mqtt_ok=1 mqtt_exec_us=5008
+
+I (30212) COMMS_RX: TX: periodic packet seq=3 sent at 29400 ms
+
+I (30422) TASKS: STAB neigh=1 dist_cent_mm=5228 min_sep_mm=5228 heading_cos_x1000=999
+
+I (30422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (30912) TASKS: PHYSICS exp_us=30406751 start_us=30399614 end_us=30399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1250 yaw_cd=27805 v=(143,-44,-209)
+
+I (30922) TASKS: RADIO exp_us=30413005 start_us=30409625 end_us=30409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (30922) TASKS: FLOCK exp_us=30409876 start_us=30415029 end_us=30415241 exec_us=212 lat_us=5153 jitter_us=5414 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(142,-44,-208) cmd_yaw_rate=-70
+
+I (30942) TASKS: TELE exp_us=30416474 start_us=30431730 end_us=30437194 exec_us=5464 lat_us=15256 jitter_us=21879 p_us=500000 x=46187 y=51215 z=7791 v=(142,-44,-208) yaw_cd=27804 seq=1251 neigh=1 mqtt_ok=1 mqtt_exec_us=5404
+
+I (31422) TASKS: STAB neigh=1 dist_cent_mm=5010 min_sep_mm=5010 heading_cos_x1000=999
+
+I (31422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (31912) TASKS: PHYSICS exp_us=31406751 start_us=31399614 end_us=31399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1300 yaw_cd=25510 v=(-278,89,403)
+
+I (31922) TASKS: RADIO exp_us=31413005 start_us=31409625 end_us=31409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (31922) TASKS: FLOCK exp_us=31409876 start_us=31415674 end_us=31415862 exec_us=188 lat_us=5798 jitter_us=6059 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(141,-45,-204) cmd_yaw_rate=11225
+
+I (31942) TASKS: TELE exp_us=31416474 start_us=31431828 end_us=31437298 exec_us=5470 lat_us=15354 jitter_us=21993 p_us=500000 x=46217 y=51225 z=7711 v=(141,-45,-204) yaw_cd=25734 seq=1301 neigh=1 mqtt_ok=1 mqtt_exec_us=5413
+
+I (32422) TASKS: STAB neigh=1 dist_cent_mm=5000 min_sep_mm=5000 heading_cos_x1000=999
+
+I (32422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (32912) TASKS: PHYSICS exp_us=32406751 start_us=32399614 end_us=32399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=1350 yaw_cd=25405 v=(-279,91,401)
+
+I (32922) TASKS: RADIO exp_us=32413005 start_us=32409625 end_us=32409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (32922) TASKS: FLOCK exp_us=32409876 start_us=32415758 end_us=32415945 exec_us=187 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(141,-46,-203) cmd_yaw_rate=11630
+
+I (32942) TASKS: TELE exp_us=32416474 start_us=32431911 end_us=32437496 exec_us=5585 lat_us=15437 jitter_us=22076 p_us=500000 x=46212 y=51240 z=7691 v=(141,-46,-203) yaw_cd=25637 seq=1351 neigh=1 mqtt_ok=1 mqtt_exec_us=5523
+
+I (33422) TASKS: STAB neigh=1 dist_cent_mm=4989 min_sep_mm=4989 heading_cos_x1000=999
+
+I (33422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (33912) TASKS: PHYSICS exp_us=33406751 start_us=33399621 end_us=33399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=1400 yaw_cd=26510 v=(142,-46,-203)
+
+I (33922) TASKS: RADIO exp_us=33413005 start_us=33409625 end_us=33409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (33922) TASKS: FLOCK exp_us=33409876 start_us=33415801 end_us=33415984 exec_us=183 lat_us=5925 jitter_us=6186 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(141,-46,-202) cmd_yaw_rate=5980
+
+I (33942) TASKS: TELE exp_us=33416474 start_us=33431863 end_us=33437336 exec_us=5473 lat_us=15389 jitter_us=22028 p_us=500000 x=46207 y=51255 z=7671 v=(141,-46,-202) yaw_cd=26629 seq=1401 neigh=1 mqtt_ok=1 mqtt_exec_us=5411
+
+I (34422) TASKS: STAB neigh=1 dist_cent_mm=4979 min_sep_mm=4979 heading_cos_x1000=999
+
+I (34422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (34912) TASKS: PHYSICS exp_us=34406751 start_us=34399614 end_us=34399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1450 yaw_cd=26520 v=(142,-47,-201)
+
+I (34922) TASKS: RADIO exp_us=34413005 start_us=34409625 end_us=34409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (34922) TASKS: FLOCK exp_us=34409876 start_us=34415761 end_us=34415949 exec_us=188 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(141,-47,-200) cmd_yaw_rate=5810
+
+I (34942) TASKS: TELE exp_us=34416474 start_us=34431824 end_us=34437284 exec_us=5460 lat_us=15350 jitter_us=21985 p_us=500000 x=46202 y=51270 z=7641 v=(141,-47,-200) yaw_cd=26636 seq=1451 neigh=1 mqtt_ok=1 mqtt_exec_us=5400
+
+I (35422) TASKS: STAB neigh=1 dist_cent_mm=5021 min_sep_mm=5021 heading_cos_x1000=-999
+
+I (35422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (35712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=5 pos=(48622,50440,4250)
+
+I (35912) TASKS: PHYSICS exp_us=35406751 start_us=35399614 end_us=35399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1500 yaw_cd=22575 v=(-247,85,343)
+
+I (35922) TASKS: RADIO exp_us=35413005 start_us=35409624 end_us=35409710 exec_us=86 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (35922) TASKS: FLOCK exp_us=35409876 start_us=35415678 end_us=35415867 exec_us=189 lat_us=5802 jitter_us=6063 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-249,85,346) cmd_yaw_rate=-18000
+
+I (35942) TASKS: TELE exp_us=35416474 start_us=35432737 end_us=35438254 exec_us=5517 lat_us=16263 jitter_us=22902 p_us=500000 x=46131 y=51296 z=7716 v=(-249,85,346) yaw_cd=22215 seq=1501 neigh=1 mqtt_ok=1 mqtt_exec_us=5435
+
+I (36212) COMMS_RX: TX: periodic packet seq=4 sent at 35400 ms
+
+I (36422) TASKS: STAB neigh=1 dist_cent_mm=4550 min_sep_mm=4550 heading_cos_x1000=999
+
+I (36422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (36912) TASKS: PHYSICS exp_us=36406751 start_us=36399614 end_us=36399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1550 yaw_cd=16170 v=(-271,90,376)
+
+I (36922) TASKS: RADIO exp_us=36413005 start_us=36409625 end_us=36409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (36922) TASKS: FLOCK exp_us=36409876 start_us=36415670 end_us=36415854 exec_us=184 lat_us=5794 jitter_us=6055 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(-273,90,380) cmd_yaw_rate=-20
+
+I (36942) TASKS: TELE exp_us=36416474 start_us=36431563 end_us=36437021 exec_us=5458 lat_us=15089 jitter_us=21728 p_us=500000 x=45885 y=51346 z=8057 v=(-273,90,380) yaw_cd=16170 seq=1551 neigh=1 mqtt_ok=1 mqtt_exec_us=5396
+
+I (37422) TASKS: STAB neigh=1 dist_cent_mm=4982 min_sep_mm=4982 heading_cos_x1000=999
+
+I (37422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (37912) TASKS: PHYSICS exp_us=37406751 start_us=37399614 end_us=37399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=1600 yaw_cd=19790 v=(144,-46,-200)
+
+I (37922) TASKS: RADIO exp_us=37413005 start_us=37409625 end_us=37409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (37922) TASKS: FLOCK exp_us=37409876 start_us=37415845 end_us=37416028 exec_us=183 lat_us=5969 jitter_us=6230 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(143,-46,-199) cmd_yaw_rate=18000
+
+I (37942) TASKS: TELE exp_us=37416474 start_us=37431998 end_us=37437480 exec_us=5482 lat_us=15524 jitter_us=22159 p_us=500000 x=45747 y=51380 z=8237 v=(143,-46,-199) yaw_cd=20150 seq=1601 neigh=1 mqtt_ok=1 mqtt_exec_us=5420
+
+I (38422) TASKS: STAB neigh=1 dist_cent_mm=5037 min_sep_mm=5037 heading_cos_x1000=999
+
+I (38422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (38912) TASKS: PHYSICS exp_us=38406751 start_us=38399614 end_us=38399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1650 yaw_cd=26450 v=(144,-47,-199)
+
+I (38922) TASKS: RADIO exp_us=38413005 start_us=38409625 end_us=38409715 exec_us=90 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (38922) TASKS: FLOCK exp_us=38409876 start_us=38415761 end_us=38415949 exec_us=188 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(143,-47,-198) cmd_yaw_rate=6270
+
+I (38942) TASKS: TELE exp_us=38416474 start_us=38431824 end_us=38437303 exec_us=5479 lat_us=15350 jitter_us=21989 p_us=500000 x=45742 y=51395 z=8222 v=(143,-47,-198) yaw_cd=26575 seq=1651 neigh=1 mqtt_ok=1 mqtt_exec_us=5419
+
+I (39422) TASKS: STAB neigh=1 dist_cent_mm=5035 min_sep_mm=5035 heading_cos_x1000=999
+
+I (39422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (39912) TASKS: PHYSICS exp_us=39406751 start_us=39399614 end_us=39399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1700 yaw_cd=27085 v=(144,-48,-199)
+
+I (39922) TASKS: RADIO exp_us=39413005 start_us=39409625 end_us=39409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (39922) TASKS: FLOCK exp_us=39409876 start_us=39415761 end_us=39415948 exec_us=187 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(144,-48,-198) cmd_yaw_rate=2975
+
+I (39942) TASKS: TELE exp_us=39416474 start_us=39431836 end_us=39436909 exec_us=5073 lat_us=15362 jitter_us=22005 p_us=500000 x=45737 y=51410 z=8222 v=(144,-48,-198) yaw_cd=27144 seq=1701 neigh=1 mqtt_ok=1 mqtt_exec_us=4989
+
+I (40422) TASKS: STAB neigh=1 dist_cent_mm=5040 min_sep_mm=5040 heading_cos_x1000=999
+
+I (40422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (40912) TASKS: PHYSICS exp_us=40406751 start_us=40399614 end_us=40399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1750 yaw_cd=26615 v=(144,-49,-199)
+
+I (40922) TASKS: RADIO exp_us=40413005 start_us=40409625 end_us=40409719 exec_us=94 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (40922) TASKS: FLOCK exp_us=40409876 start_us=40415761 end_us=40415949 exec_us=188 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(144,-49,-198) cmd_yaw_rate=5205
+
+I (40942) TASKS: TELE exp_us=40416474 start_us=40431828 end_us=40436893 exec_us=5065 lat_us=15354 jitter_us=22001 p_us=500000 x=45732 y=51425 z=8222 v=(144,-49,-198) yaw_cd=26719 seq=1751 neigh=1 mqtt_ok=1 mqtt_exec_us=5004
+
+I (41422) TASKS: STAB neigh=1 dist_cent_mm=4985 min_sep_mm=4985 heading_cos_x1000=-999
+
+I (41422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (41712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=6 pos=(48707,50425,4130)
+
+I (41912) TASKS: PHYSICS exp_us=41406751 start_us=41399614 end_us=41399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=1800 yaw_cd=27520 v=(148,-50,-203)
+
+I (41922) TASKS: RADIO exp_us=41413005 start_us=41409624 end_us=41409707 exec_us=83 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (41922) TASKS: FLOCK exp_us=41409876 start_us=41415855 end_us=41416043 exec_us=188 lat_us=5979 jitter_us=6240 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(147,-50,-202) cmd_yaw_rate=710
+
+I (41942) TASKS: TELE exp_us=41416474 start_us=41431744 end_us=41437257 exec_us=5513 lat_us=15270 jitter_us=21905 p_us=500000 x=45762 y=51424 z=8161 v=(147,-50,-202) yaw_cd=27534 seq=1801 neigh=1 mqtt_ok=1 mqtt_exec_us=5455
+
+I (42212) COMMS_RX: TX: periodic packet seq=5 sent at 41400 ms
+
+I (42422) TASKS: STAB neigh=1 dist_cent_mm=4994 min_sep_mm=4994 heading_cos_x1000=999
+
+I (42422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (42912) TASKS: PHYSICS exp_us=42406751 start_us=42399621 end_us=42399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=1850 yaw_cd=25615 v=(-288,99,393)
+
+I (42922) TASKS: RADIO exp_us=42413005 start_us=42409625 end_us=42409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (42922) TASKS: FLOCK exp_us=42409876 start_us=42415718 end_us=42415910 exec_us=192 lat_us=5842 jitter_us=6103 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(146,-50,-198) cmd_yaw_rate=10145
+
+I (42942) TASKS: TELE exp_us=42416474 start_us=42431868 end_us=42437352 exec_us=5484 lat_us=15394 jitter_us=22025 p_us=500000 x=45792 y=51424 z=8097 v=(146,-50,-198) yaw_cd=25817 seq=1851 neigh=1 mqtt_ok=1 mqtt_exec_us=5424
+
+I (43422) TASKS: STAB neigh=1 dist_cent_mm=4997 min_sep_mm=4997 heading_cos_x1000=999
+
+I (43422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (43912) TASKS: PHYSICS exp_us=43406751 start_us=43399614 end_us=43399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1900 yaw_cd=25550 v=(-289,99,393)
+
+I (43922) TASKS: RADIO exp_us=43413005 start_us=43409625 end_us=43409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (43922) TASKS: FLOCK exp_us=43409876 start_us=43413594 end_us=43413786 exec_us=192 lat_us=3718 jitter_us=3979 p_us=100000 neigh=1 age_max_ms=2212 cmd_v=(146,-50,-198) cmd_yaw_rate=10485
+
+I (43942) TASKS: TELE exp_us=43416474 start_us=43431833 end_us=43437270 exec_us=5437 lat_us=15359 jitter_us=21986 p_us=500000 x=45787 y=51424 z=8097 v=(146,-50,-198) yaw_cd=25759 seq=1901 neigh=1 mqtt_ok=1 mqtt_exec_us=5372
+
+I (44422) TASKS: STAB neigh=1 dist_cent_mm=5000 min_sep_mm=5000 heading_cos_x1000=999
+
+I (44422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (44912) TASKS: PHYSICS exp_us=44406751 start_us=44399614 end_us=44399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=1950 yaw_cd=25325 v=(-289,99,393)
+
+I (44922) TASKS: RADIO exp_us=44413005 start_us=44409625 end_us=44409719 exec_us=94 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (44922) TASKS: FLOCK exp_us=44409876 start_us=44415671 end_us=44415858 exec_us=187 lat_us=5795 jitter_us=6056 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(146,-50,-198) cmd_yaw_rate=11625
+
+I (44942) TASKS: TELE exp_us=44416474 start_us=44431824 end_us=44437955 exec_us=6131 lat_us=15350 jitter_us=21993 p_us=500000 x=45782 y=51424 z=8097 v=(146,-50,-198) yaw_cd=25557 seq=1951 neigh=1 mqtt_ok=1 mqtt_exec_us=6073
+
+I (45422) TASKS: STAB neigh=1 dist_cent_mm=5003 min_sep_mm=5003 heading_cos_x1000=999
+
+I (45422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (45912) TASKS: PHYSICS exp_us=45406751 start_us=45399614 end_us=45399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=2000 yaw_cd=25325 v=(-290,99,393)
+
+I (45922) TASKS: RADIO exp_us=45413005 start_us=45409625 end_us=45409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (45922) TASKS: FLOCK exp_us=45409876 start_us=45415758 end_us=45415946 exec_us=188 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(146,-50,-198) cmd_yaw_rate=11640
+
+I (45942) TASKS: TELE exp_us=45416474 start_us=45431908 end_us=45437337 exec_us=5429 lat_us=15434 jitter_us=22073 p_us=500000 x=45777 y=51424 z=8097 v=(146,-50,-198) yaw_cd=25557 seq=2001 neigh=1 mqtt_ok=1 mqtt_exec_us=5371
+
+I (46422) TASKS: STAB neigh=1 dist_cent_mm=5006 min_sep_mm=5006 heading_cos_x1000=999
+
+I (46422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (46912) TASKS: PHYSICS exp_us=46406751 start_us=46399621 end_us=46399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=2050 yaw_cd=25325 v=(-290,99,393)
+
+I (46922) TASKS: RADIO exp_us=46413005 start_us=46409625 end_us=46409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (46922) TASKS: FLOCK exp_us=46409876 start_us=46415710 end_us=46415898 exec_us=188 lat_us=5834 jitter_us=6095 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(147,-50,-198) cmd_yaw_rate=11655
+
+I (46942) TASKS: TELE exp_us=46416474 start_us=46431860 end_us=46437325 exec_us=5465 lat_us=15386 jitter_us=22025 p_us=500000 x=45772 y=51424 z=8097 v=(147,-50,-198) yaw_cd=25558 seq=2051 neigh=1 mqtt_ok=1 mqtt_exec_us=5403
+
+I (47422) TASKS: STAB neigh=1 dist_cent_mm=5009 min_sep_mm=5009 heading_cos_x1000=999
+
+I (47422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (47712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=7 pos=(48417,50520,4535)
+
+I (47912) TASKS: PHYSICS exp_us=47406751 start_us=47399614 end_us=47399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2100 yaw_cd=22890 v=(-266,90,358)
+
+I (47922) TASKS: RADIO exp_us=47413005 start_us=47409624 end_us=47409699 exec_us=75 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (47922) TASKS: FLOCK exp_us=47409876 start_us=47415669 end_us=47415834 exec_us=165 lat_us=5793 jitter_us=6054 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-269,91,361) cmd_yaw_rate=-18000
+
+I (47942) TASKS: TELE exp_us=47416474 start_us=47431735 end_us=47436837 exec_us=5102 lat_us=15261 jitter_us=21888 p_us=500000 x=45725 y=51431 z=8157 v=(-269,91,361) yaw_cd=22530 seq=2101 neigh=1 mqtt_ok=1 mqtt_exec_us=5040
+
+I (48212) COMMS_RX: TX: periodic packet seq=6 sent at 47400 ms
+
+I (48422) TASKS: STAB neigh=1 dist_cent_mm=4810 min_sep_mm=4810 heading_cos_x1000=999
+
+I (48422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (48912) TASKS: PHYSICS exp_us=48406751 start_us=48399614 end_us=48399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2150 yaw_cd=16195 v=(-291,95,393)
+
+I (48922) TASKS: RADIO exp_us=48413005 start_us=48409625 end_us=48409711 exec_us=86 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (48922) TASKS: FLOCK exp_us=48409876 start_us=48415675 end_us=48415862 exec_us=187 lat_us=5799 jitter_us=6060 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(146,-47,-197) cmd_yaw_rate=18000
+
+I (48942) TASKS: TELE exp_us=48416474 start_us=48431828 end_us=48438266 exec_us=6438 lat_us=15354 jitter_us=21997 p_us=500000 x=45482 y=51480 z=8497 v=(146,-47,-197) yaw_cd=16555 seq=2151 neigh=1 mqtt_ok=1 mqtt_exec_us=6380
+
+I (49422) TASKS: STAB neigh=1 dist_cent_mm=4999 min_sep_mm=4999 heading_cos_x1000=-999
+
+I (49422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (49912) TASKS: PHYSICS exp_us=49406751 start_us=49399614 end_us=49399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2200 yaw_cd=23395 v=(-292,97,393)
+
+I (49922) TASKS: RADIO exp_us=49413005 start_us=49409625 end_us=49409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (49922) TASKS: FLOCK exp_us=49409876 start_us=49415674 end_us=49415862 exec_us=188 lat_us=5798 jitter_us=6059 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(146,-48,-197) cmd_yaw_rate=18000
+
+I (49942) TASKS: TELE exp_us=49416474 start_us=49431828 end_us=49436861 exec_us=5033 lat_us=15354 jitter_us=22024 p_us=500000 x=45477 y=51495 z=8497 v=(146,-48,-197) yaw_cd=23755 seq=2201 neigh=1 mqtt_ok=1 mqtt_exec_us=4972
+
+I (50422) TASKS: STAB neigh=1 dist_cent_mm=5005 min_sep_mm=5005 heading_cos_x1000=-999
+
+I (50422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (50912) TASKS: PHYSICS exp_us=50406751 start_us=50399621 end_us=50399663 exec_us=42 lat_us=-7130 jitter_us=7 p_us=20000 seq=2250 yaw_cd=25335 v=(-292,98,393)
+
+I (50922) TASKS: RADIO exp_us=50413005 start_us=50409625 end_us=50409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (50922) TASKS: FLOCK exp_us=50409876 start_us=50415722 end_us=50415910 exec_us=188 lat_us=5846 jitter_us=6107 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(147,-49,-197) cmd_yaw_rate=11725
+
+I (50942) TASKS: TELE exp_us=50416474 start_us=50431872 end_us=50437335 exec_us=5463 lat_us=15398 jitter_us=22041 p_us=500000 x=45472 y=51510 z=8497 v=(147,-49,-197) yaw_cd=25569 seq=2251 neigh=1 mqtt_ok=1 mqtt_exec_us=5407
+
+I (51422) TASKS: STAB neigh=1 dist_cent_mm=5011 min_sep_mm=5011 heading_cos_x1000=-999
+
+I (51422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (51912) TASKS: PHYSICS exp_us=51406751 start_us=51399614 end_us=51399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2300 yaw_cd=27360 v=(146,-49,-196)
+
+I (51922) TASKS: RADIO exp_us=51413005 start_us=51409625 end_us=51409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (51922) TASKS: FLOCK exp_us=51409876 start_us=51415761 end_us=51415965 exec_us=204 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(-292,100,391) cmd_yaw_rate=-18000
+
+I (51942) TASKS: TELE exp_us=51416474 start_us=51432002 end_us=51437444 exec_us=5442 lat_us=15528 jitter_us=22167 p_us=500000 x=45495 y=51522 z=8457 v=(-292,100,391) yaw_cd=27000 seq=2301 neigh=1 mqtt_ok=1 mqtt_exec_us=5381
+
+I (52422) TASKS: STAB neigh=1 dist_cent_mm=5015 min_sep_mm=5015 heading_cos_x1000=-999
+
+I (52422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (52912) TASKS: PHYSICS exp_us=52406751 start_us=52399614 end_us=52399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2350 yaw_cd=27350 v=(146,-49,-196)
+
+I (52922) TASKS: RADIO exp_us=52413005 start_us=52409625 end_us=52409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (52922) TASKS: FLOCK exp_us=52409876 start_us=52415765 end_us=52415961 exec_us=196 lat_us=5889 jitter_us=6150 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(-292,100,391) cmd_yaw_rate=-18000
+
+I (52942) TASKS: TELE exp_us=52416474 start_us=52432025 end_us=52437546 exec_us=5521 lat_us=15551 jitter_us=22194 p_us=500000 x=45490 y=51522 z=8457 v=(-292,100,391) yaw_cd=26990 seq=2351 neigh=1 mqtt_ok=1 mqtt_exec_us=5440
+
+I (53422) TASKS: STAB neigh=1 dist_cent_mm=5018 min_sep_mm=5018 heading_cos_x1000=-999
+
+I (53422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (53712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=8 pos=(48392,50520,4575)
+
+I (53912) TASKS: PHYSICS exp_us=53406751 start_us=53399614 end_us=53399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2400 yaw_cd=25555 v=(147,-50,-196)
+
+I (53922) TASKS: RADIO exp_us=53413005 start_us=53409624 end_us=53409707 exec_us=83 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (53922) TASKS: FLOCK exp_us=53409876 start_us=53415767 end_us=53415951 exec_us=184 lat_us=5891 jitter_us=6152 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(146,-50,-195) cmd_yaw_rate=10370
+
+I (53942) TASKS: TELE exp_us=53416474 start_us=53431830 end_us=53437315 exec_us=5485 lat_us=15356 jitter_us=21995 p_us=500000 x=45457 y=51534 z=8497 v=(146,-50,-195) yaw_cd=25762 seq=2401 neigh=1 mqtt_ok=1 mqtt_exec_us=5423
+
+I (54212) COMMS_RX: TX: periodic packet seq=7 sent at 53400 ms
+
+I (54422) TASKS: STAB neigh=1 dist_cent_mm=5038 min_sep_mm=5038 heading_cos_x1000=999
+
+I (54422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (54912) TASKS: PHYSICS exp_us=54406751 start_us=54399614 end_us=54399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=2450 yaw_cd=26575 v=(147,-50,-196)
+
+I (54922) TASKS: RADIO exp_us=54413005 start_us=54409625 end_us=54409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (54922) TASKS: FLOCK exp_us=54409876 start_us=54415853 end_us=54416037 exec_us=184 lat_us=5977 jitter_us=6238 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(146,-50,-195) cmd_yaw_rate=5330
+
+I (54942) TASKS: TELE exp_us=54416474 start_us=54431916 end_us=54437483 exec_us=5567 lat_us=15442 jitter_us=22081 p_us=500000 x=45452 y=51529 z=8497 v=(146,-50,-195) yaw_cd=26681 seq=2451 neigh=1 mqtt_ok=1 mqtt_exec_us=5506
+
+I (55422) TASKS: STAB neigh=1 dist_cent_mm=5040 min_sep_mm=5040 heading_cos_x1000=999
+
+I (55422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (55912) TASKS: PHYSICS exp_us=55406751 start_us=55399614 end_us=55399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2500 yaw_cd=26595 v=(147,-50,-196)
+
+I (55922) TASKS: RADIO exp_us=55413005 start_us=55409633 end_us=55409719 exec_us=86 lat_us=-3372 jitter_us=8 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (55922) TASKS: FLOCK exp_us=55409876 start_us=55416534 end_us=55416717 exec_us=183 lat_us=6658 jitter_us=6919 p_us=100000 neigh=1 age_max_ms=2215 cmd_v=(147,-50,-195) cmd_yaw_rate=5290
+
+I (55942) TASKS: TELE exp_us=55416474 start_us=55432604 end_us=55438100 exec_us=5496 lat_us=16130 jitter_us=22773 p_us=500000 x=45447 y=51524 z=8497 v=(147,-50,-195) yaw_cd=26700 seq=2501 neigh=1 mqtt_ok=1 mqtt_exec_us=5435
+
+I (56422) TASKS: STAB neigh=1 dist_cent_mm=5042 min_sep_mm=5042 heading_cos_x1000=999
+
+I (56422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (56912) TASKS: PHYSICS exp_us=56406751 start_us=56399614 end_us=56399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2550 yaw_cd=26600 v=(147,-50,-196)
+
+I (56922) TASKS: RADIO exp_us=56413005 start_us=56409625 end_us=56409711 exec_us=86 lat_us=-3380 jitter_us=-8 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (56922) TASKS: FLOCK exp_us=56409876 start_us=56415844 end_us=56416032 exec_us=188 lat_us=5968 jitter_us=6229 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(147,-50,-195) cmd_yaw_rate=5280
+
+I (56942) TASKS: TELE exp_us=56416474 start_us=56431923 end_us=56437407 exec_us=5484 lat_us=15449 jitter_us=22104 p_us=500000 x=45442 y=51524 z=8497 v=(147,-50,-195) yaw_cd=26705 seq=2551 neigh=1 mqtt_ok=1 mqtt_exec_us=5404
+
+I (57422) TASKS: STAB neigh=1 dist_cent_mm=4983 min_sep_mm=4983 heading_cos_x1000=-999
+
+I (57422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (57912) TASKS: PHYSICS exp_us=57406751 start_us=57399614 end_us=57399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2600 yaw_cd=26490 v=(148,-50,-196)
+
+I (57922) TASKS: RADIO exp_us=57413005 start_us=57409625 end_us=57409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (57922) TASKS: FLOCK exp_us=57409876 start_us=57415761 end_us=57415949 exec_us=188 lat_us=5885 jitter_us=6146 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(147,-50,-195) cmd_yaw_rate=5845
+
+I (57942) TASKS: TELE exp_us=57416474 start_us=57431828 end_us=57436865 exec_us=5037 lat_us=15354 jitter_us=21985 p_us=500000 x=45437 y=51524 z=8497 v=(147,-50,-195) yaw_cd=26606 seq=2601 neigh=1 mqtt_ok=1 mqtt_exec_us=4980
+
+I (58422) TASKS: STAB neigh=1 dist_cent_mm=4986 min_sep_mm=4986 heading_cos_x1000=-999
+
+I (58422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (58912) TASKS: PHYSICS exp_us=58406751 start_us=58399614 end_us=58399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=2650 yaw_cd=26490 v=(148,-50,-196)
+
+I (58922) TASKS: RADIO exp_us=58413005 start_us=58409625 end_us=58409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (58922) TASKS: FLOCK exp_us=58409876 start_us=58415853 end_us=58416037 exec_us=184 lat_us=5977 jitter_us=6238 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(147,-50,-195) cmd_yaw_rate=5860
+
+I (58942) TASKS: TELE exp_us=58416474 start_us=58431916 end_us=58437380 exec_us=5464 lat_us=15442 jitter_us=22077 p_us=500000 x=45432 y=51524 z=8497 v=(147,-50,-195) yaw_cd=26607 seq=2651 neigh=1 mqtt_ok=1 mqtt_exec_us=5403
+
+I (59422) TASKS: STAB neigh=1 dist_cent_mm=4989 min_sep_mm=4989 heading_cos_x1000=-999
+
+I (59422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (59712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=9 pos=(48152,50595,4910)
+
+I (59912) TASKS: PHYSICS exp_us=59406751 start_us=59399621 end_us=59399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=2700 yaw_cd=23475 v=(-274,93,360)
+
+I (59922) TASKS: RADIO exp_us=59413005 start_us=59409628 end_us=59409711 exec_us=83 lat_us=-3377 jitter_us=3 p_us=1000000 neigh=1 age_max_ms=208
+
+I (59922) TASKS: FLOCK exp_us=59409876 start_us=59415637 end_us=59415822 exec_us=185 lat_us=5761 jitter_us=6022 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-276,93,364) cmd_yaw_rate=-18000
+
+I (59942) TASKS: TELE exp_us=59416474 start_us=59431700 end_us=59437244 exec_us=5544 lat_us=15226 jitter_us=21865 p_us=500000 x=45385 y=51531 z=8557 v=(-276,93,364) yaw_cd=23115 seq=2701 neigh=1 mqtt_ok=1 mqtt_exec_us=5481
+
+I (60212) COMMS_RX: TX: periodic packet seq=8 sent at 59400 ms
+
+I (60422) TASKS: STAB neigh=1 dist_cent_mm=4879 min_sep_mm=4879 heading_cos_x1000=998
+
+I (60422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (60912) TASKS: PHYSICS exp_us=60406751 start_us=60399614 end_us=60399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2750 yaw_cd=17105 v=(-295,97,390)
+
+I (60922) TASKS: RADIO exp_us=60413005 start_us=60409625 end_us=60409711 exec_us=86 lat_us=-3380 jitter_us=-3 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (60922) TASKS: FLOCK exp_us=60409876 start_us=60412066 end_us=60412269 exec_us=203 lat_us=2190 jitter_us=2377 p_us=100000 neigh=1 age_max_ms=1211 cmd_v=(148,-48,-196) cmd_yaw_rate=18000
+
+I (60942) TASKS: TELE exp_us=60416474 start_us=60431916 end_us=60437384 exec_us=5468 lat_us=15442 jitter_us=22061 p_us=500000 x=45177 y=51575 z=8847 v=(148,-48,-196) yaw_cd=17465 seq=2751 neigh=1 mqtt_ok=1 mqtt_exec_us=5404
+
+I (61422) TASKS: STAB neigh=1 dist_cent_mm=5007 min_sep_mm=5007 heading_cos_x1000=-998
+
+I (61422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (61912) TASKS: PHYSICS exp_us=61406751 start_us=61399614 end_us=61399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2800 yaw_cd=24195 v=(-295,99,390)
+
+I (61922) TASKS: RADIO exp_us=61413005 start_us=61409625 end_us=61409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (61922) TASKS: FLOCK exp_us=61409876 start_us=61415667 end_us=61415854 exec_us=187 lat_us=5791 jitter_us=6052 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(148,-49,-196) cmd_yaw_rate=17485
+
+I (61942) TASKS: TELE exp_us=61416474 start_us=61431828 end_us=61438018 exec_us=6190 lat_us=15354 jitter_us=21989 p_us=500000 x=45172 y=51590 z=8847 v=(148,-49,-196) yaw_cd=24544 seq=2801 neigh=1 mqtt_ok=1 mqtt_exec_us=6132
+
+I (62422) TASKS: STAB neigh=1 dist_cent_mm=5013 min_sep_mm=5013 heading_cos_x1000=-998
+
+I (62422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (62912) TASKS: PHYSICS exp_us=62406751 start_us=62399614 end_us=62399628 exec_us=14 lat_us=-7137 jitter_us=-4 p_us=20000 seq=2850 yaw_cd=27370 v=(147,-49,-194)
+
+I (62922) TASKS: RADIO exp_us=62413005 start_us=62409625 end_us=62409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (62922) TASKS: FLOCK exp_us=62409876 start_us=62415849 end_us=62416041 exec_us=192 lat_us=5973 jitter_us=6234 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(-295,100,389) cmd_yaw_rate=-18000
+
+I (62942) TASKS: TELE exp_us=62416474 start_us=62432085 end_us=62437529 exec_us=5444 lat_us=15611 jitter_us=22250 p_us=500000 x=45195 y=51597 z=8807 v=(-295,100,389) yaw_cd=27010 seq=2851 neigh=1 mqtt_ok=1 mqtt_exec_us=5386
+
+I (63422) TASKS: STAB neigh=1 dist_cent_mm=5016 min_sep_mm=5016 heading_cos_x1000=-998
+
+I (63422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (63912) TASKS: PHYSICS exp_us=63406751 start_us=63399621 end_us=63399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=2900 yaw_cd=27370 v=(148,-49,-194)
+
+I (63922) TASKS: RADIO exp_us=63413005 start_us=63409625 end_us=63409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (63922) TASKS: FLOCK exp_us=63409876 start_us=63415797 end_us=63415985 exec_us=188 lat_us=5921 jitter_us=6182 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(-296,100,389) cmd_yaw_rate=-18000
+
+I (63942) TASKS: TELE exp_us=63416474 start_us=63432037 end_us=63437470 exec_us=5433 lat_us=15563 jitter_us=22202 p_us=500000 x=45190 y=51597 z=8807 v=(-296,100,389) yaw_cd=27010 seq=2901 neigh=1 mqtt_ok=1 mqtt_exec_us=5376
+
+I (64422) TASKS: STAB neigh=1 dist_cent_mm=5019 min_sep_mm=5019 heading_cos_x1000=-998
+
+I (64422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (64912) TASKS: PHYSICS exp_us=64406751 start_us=64399614 end_us=64399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=2950 yaw_cd=27140 v=(148,-50,-194)
+
+I (64922) TASKS: RADIO exp_us=64413005 start_us=64409625 end_us=64409699 exec_us=74 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (64922) TASKS: FLOCK exp_us=64409876 start_us=64411896 end_us=64412107 exec_us=211 lat_us=2020 jitter_us=2281 p_us=100000 neigh=1 age_max_ms=5210 cmd_v=(-296,100,389) cmd_yaw_rate=-18000
+
+I (64942) TASKS: TELE exp_us=64416474 start_us=64431987 end_us=64437438 exec_us=5451 lat_us=15513 jitter_us=22148 p_us=500000 x=45185 y=51597 z=8807 v=(-296,100,389) yaw_cd=26780 seq=2951 neigh=1 mqtt_ok=1 mqtt_exec_us=5389
+
+I (65422) TASKS: STAB neigh=1 dist_cent_mm=5022 min_sep_mm=5022 heading_cos_x1000=-998
+
+I (65422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (65712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=10 pos=(48082,50605,5000)
+
+I (65912) TASKS: PHYSICS exp_us=65406751 start_us=65399614 end_us=65399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3000 yaw_cd=21975 v=(-294,101,386)
+
+I (65922) TASKS: RADIO exp_us=65413005 start_us=65409624 end_us=65409711 exec_us=87 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (65922) TASKS: FLOCK exp_us=65409876 start_us=65415756 end_us=65415945 exec_us=189 lat_us=5880 jitter_us=6141 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(148,-50,-194) cmd_yaw_rate=18000
+
+I (65942) TASKS: TELE exp_us=65416474 start_us=65431834 end_us=65438692 exec_us=6858 lat_us=15360 jitter_us=21995 p_us=500000 x=45117 y=51624 z=8897 v=(148,-50,-194) yaw_cd=22335 seq=3001 neigh=1 mqtt_ok=1 mqtt_exec_us=6800
+
+I (66212) COMMS_RX: TX: periodic packet seq=9 sent at 65400 ms
+
+I (66422) TASKS: STAB neigh=1 dist_cent_mm=5037 min_sep_mm=5037 heading_cos_x1000=999
+
+I (66422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (66912) TASKS: PHYSICS exp_us=66406751 start_us=66399614 end_us=66399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3050 yaw_cd=26485 v=(148,-50,-195)
+
+I (66922) TASKS: RADIO exp_us=66413005 start_us=66409625 end_us=66409711 exec_us=86 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (66922) TASKS: FLOCK exp_us=66409876 start_us=66415762 end_us=66415945 exec_us=183 lat_us=5886 jitter_us=6147 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(148,-50,-194) cmd_yaw_rate=5830
+
+I (66942) TASKS: TELE exp_us=66416474 start_us=66431824 end_us=66436850 exec_us=5026 lat_us=15350 jitter_us=21989 p_us=500000 x=45112 y=51619 z=8897 v=(148,-50,-194) yaw_cd=26601 seq=3051 neigh=1 mqtt_ok=1 mqtt_exec_us=4968
+
+I (67422) TASKS: STAB neigh=1 dist_cent_mm=5039 min_sep_mm=5039 heading_cos_x1000=999
+
+I (67422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (67912) TASKS: PHYSICS exp_us=67406751 start_us=67399621 end_us=67399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=3100 yaw_cd=26605 v=(149,-50,-195)
+
+I (67922) TASKS: RADIO exp_us=67413005 start_us=67409625 end_us=67409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (67922) TASKS: FLOCK exp_us=67409876 start_us=67415805 end_us=67415989 exec_us=184 lat_us=5929 jitter_us=6190 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(148,-50,-194) cmd_yaw_rate=5290
+
+I (67942) TASKS: TELE exp_us=67416474 start_us=67431868 end_us=67437378 exec_us=5510 lat_us=15394 jitter_us=22033 p_us=500000 x=45107 y=51614 z=8897 v=(148,-50,-194) yaw_cd=26710 seq=3101 neigh=1 mqtt_ok=1 mqtt_exec_us=5452
+
+I (68422) TASKS: STAB neigh=1 dist_cent_mm=5041 min_sep_mm=5041 heading_cos_x1000=999
+
+I (68422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (68912) TASKS: PHYSICS exp_us=68406751 start_us=68399614 end_us=68399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3150 yaw_cd=26615 v=(149,-50,-195)
+
+I (68922) TASKS: RADIO exp_us=68413005 start_us=68409625 end_us=68409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (68922) TASKS: FLOCK exp_us=68409876 start_us=68415757 end_us=68415957 exec_us=200 lat_us=5881 jitter_us=6142 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(148,-50,-194) cmd_yaw_rate=5295
+
+I (68942) TASKS: TELE exp_us=68416474 start_us=68431824 end_us=68437270 exec_us=5446 lat_us=15350 jitter_us=21985 p_us=500000 x=45102 y=51609 z=8897 v=(148,-50,-194) yaw_cd=26720 seq=3151 neigh=1 mqtt_ok=1 mqtt_exec_us=5388
+
+I (69422) TASKS: STAB neigh=1 dist_cent_mm=5043 min_sep_mm=5043 heading_cos_x1000=999
+
+I (69422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (69912) TASKS: PHYSICS exp_us=69406751 start_us=69399614 end_us=69399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3200 yaw_cd=26625 v=(149,-50,-195)
+
+I (69922) TASKS: RADIO exp_us=69413005 start_us=69409625 end_us=69409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (69922) TASKS: FLOCK exp_us=69409876 start_us=69415754 end_us=69415937 exec_us=183 lat_us=5878 jitter_us=6139 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(149,-50,-194) cmd_yaw_rate=5260
+
+I (69942) TASKS: TELE exp_us=69416474 start_us=69431860 end_us=69437354 exec_us=5494 lat_us=15386 jitter_us=22065 p_us=500000 x=45097 y=51609 z=8897 v=(149,-50,-194) yaw_cd=26730 seq=3201 neigh=1 mqtt_ok=1 mqtt_exec_us=5425
+
+I (70422) TASKS: STAB neigh=1 dist_cent_mm=4984 min_sep_mm=4984 heading_cos_x1000=-999
+
+I (70422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (70912) TASKS: PHYSICS exp_us=70406751 start_us=70399614 end_us=70399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3250 yaw_cd=26510 v=(149,-50,-195)
+
+I (70922) TASKS: RADIO exp_us=70413005 start_us=70409625 end_us=70409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (70922) TASKS: FLOCK exp_us=70409876 start_us=70415758 end_us=70415941 exec_us=183 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(149,-50,-194) cmd_yaw_rate=5850
+
+I (70942) TASKS: TELE exp_us=70416474 start_us=70431820 end_us=70437292 exec_us=5472 lat_us=15346 jitter_us=21989 p_us=500000 x=45092 y=51609 z=8897 v=(149,-50,-194) yaw_cd=26627 seq=3251 neigh=1 mqtt_ok=1 mqtt_exec_us=5415
+
+I (71422) TASKS: STAB neigh=1 dist_cent_mm=4984 min_sep_mm=4984 heading_cos_x1000=-999
+
+I (71422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (71712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=11 pos=(47817,50685,5365)
+
+I (71912) TASKS: PHYSICS exp_us=71406751 start_us=71399614 end_us=71399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=3300 yaw_cd=23550 v=(-274,92,355)
+
+I (71922) TASKS: RADIO exp_us=71413005 start_us=71409624 end_us=71409706 exec_us=82 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (71922) TASKS: FLOCK exp_us=71409876 start_us=71415765 end_us=71415950 exec_us=185 lat_us=5889 jitter_us=6150 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-276,93,358) cmd_yaw_rate=-18000
+
+I (71942) TASKS: TELE exp_us=71416474 start_us=71431827 end_us=71437324 exec_us=5497 lat_us=15353 jitter_us=21988 p_us=500000 x=45050 y=51616 z=8957 v=(-276,93,358) yaw_cd=23190 seq=3301 neigh=1 mqtt_ok=1 mqtt_exec_us=5439
+
+I (72212) COMMS_RX: TX: periodic packet seq=10 sent at 71400 ms
+
+I (72422) TASKS: STAB neigh=1 dist_cent_mm=4835 min_sep_mm=4835 heading_cos_x1000=999
+
+I (72422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (72912) TASKS: PHYSICS exp_us=72406751 start_us=72399618 end_us=72399656 exec_us=38 lat_us=-7133 jitter_us=4 p_us=20000 seq=3350 yaw_cd=18015 v=(149,-48,-194)
+
+I (72922) TASKS: RADIO exp_us=72413005 start_us=72409625 end_us=72409707 exec_us=82 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (72922) TASKS: FLOCK exp_us=72409876 start_us=72415797 end_us=72415985 exec_us=188 lat_us=5921 jitter_us=6182 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(-298,97,388) cmd_yaw_rate=-9145
+
+I (72942) TASKS: TELE exp_us=72416474 start_us=72431860 end_us=72437402 exec_us=5542 lat_us=15386 jitter_us=22057 p_us=500000 x=44835 y=51661 z=9257 v=(-298,97,388) yaw_cd=17833 seq=3351 neigh=1 mqtt_ok=1 mqtt_exec_us=5485
+
+I (73422) TASKS: STAB neigh=1 dist_cent_mm=5020 min_sep_mm=5020 heading_cos_x1000=-999
+
+I (73422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (73912) TASKS: PHYSICS exp_us=73406751 start_us=73399614 end_us=73399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3400 yaw_cd=26000 v=(149,-49,-194)
+
+I (73922) TASKS: RADIO exp_us=73413005 start_us=73409625 end_us=73409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (73922) TASKS: FLOCK exp_us=73409876 start_us=73415758 end_us=73415941 exec_us=183 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(-298,99,388) cmd_yaw_rate=-18000
+
+I (73942) TASKS: TELE exp_us=73416474 start_us=73431935 end_us=73437396 exec_us=5461 lat_us=15461 jitter_us=22120 p_us=500000 x=44835 y=51676 z=9257 v=(-298,99,388) yaw_cd=25640 seq=3401 neigh=1 mqtt_ok=1 mqtt_exec_us=5392
+
+I (74422) TASKS: STAB neigh=1 dist_cent_mm=5026 min_sep_mm=5026 heading_cos_x1000=999
+
+I (74422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (74912) TASKS: PHYSICS exp_us=74406751 start_us=74399614 end_us=74399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3450 yaw_cd=27085 v=(149,-50,-194)
+
+I (74922) TASKS: RADIO exp_us=74413005 start_us=74409625 end_us=74409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (74922) TASKS: FLOCK exp_us=74409876 start_us=74415757 end_us=74415946 exec_us=189 lat_us=5881 jitter_us=6142 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(-298,100,388) cmd_yaw_rate=-18000
+
+I (74942) TASKS: TELE exp_us=74416474 start_us=74431994 end_us=74437423 exec_us=5429 lat_us=15520 jitter_us=22155 p_us=500000 x=44830 y=51687 z=9257 v=(-298,100,388) yaw_cd=26725 seq=3451 neigh=1 mqtt_ok=1 mqtt_exec_us=5371
+
+I (75422) TASKS: STAB neigh=1 dist_cent_mm=5028 min_sep_mm=5028 heading_cos_x1000=999
+
+I (75422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (75912) TASKS: PHYSICS exp_us=75406751 start_us=75399614 end_us=75399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=3500 yaw_cd=27090 v=(149,-50,-194)
+
+I (75922) TASKS: RADIO exp_us=75413005 start_us=75409625 end_us=75409715 exec_us=90 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=4208
+
+I (75922) TASKS: FLOCK exp_us=75409876 start_us=75415841 end_us=75416025 exec_us=184 lat_us=5965 jitter_us=6226 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(-298,100,388) cmd_yaw_rate=-18000
+
+I (75942) TASKS: TELE exp_us=75416474 start_us=75432082 end_us=75437100 exec_us=5018 lat_us=15608 jitter_us=22247 p_us=500000 x=44830 y=51687 z=9257 v=(-298,100,388) yaw_cd=26730 seq=3501 neigh=1 mqtt_ok=1 mqtt_exec_us=4961
+
+I (76422) TASKS: STAB neigh=1 dist_cent_mm=5028 min_sep_mm=5028 heading_cos_x1000=999
+
+I (76422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (76912) TASKS: PHYSICS exp_us=76406751 start_us=76399621 end_us=76399660 exec_us=39 lat_us=-7130 jitter_us=7 p_us=20000 seq=3550 yaw_cd=27090 v=(149,-50,-194)
+
+I (76922) TASKS: RADIO exp_us=76413005 start_us=76409625 end_us=76409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (76922) TASKS: FLOCK exp_us=76409876 start_us=76415797 end_us=76415982 exec_us=185 lat_us=5921 jitter_us=6182 p_us=100000 neigh=1 age_max_ms=5214 cmd_v=(-298,100,388) cmd_yaw_rate=-18000
+
+I (76942) TASKS: TELE exp_us=76416474 start_us=76432034 end_us=76437052 exec_us=5018 lat_us=15560 jitter_us=22195 p_us=500000 x=44830 y=51687 z=9257 v=(-298,100,388) yaw_cd=26730 seq=3551 neigh=1 mqtt_ok=1 mqtt_exec_us=4961
+
+I (77422) TASKS: STAB neigh=1 dist_cent_mm=5028 min_sep_mm=5028 heading_cos_x1000=999
+
+I (77422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (77712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=12 pos=(47777,50685,5425)
+
+I (77912) TASKS: PHYSICS exp_us=77406751 start_us=77399614 end_us=77399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3600 yaw_cd=25345 v=(149,-50,-194)
+
+I (77922) TASKS: RADIO exp_us=77413005 start_us=77409624 end_us=77409703 exec_us=79 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (77922) TASKS: FLOCK exp_us=77409876 start_us=77410551 end_us=77410735 exec_us=184 lat_us=675 jitter_us=936 p_us=100000 neigh=1 age_max_ms=209 cmd_v=(-298,101,387) cmd_yaw_rate=-18000
+
+I (77942) TASKS: TELE exp_us=77416474 start_us=77431741 end_us=77437219 exec_us=5478 lat_us=15267 jitter_us=21890 p_us=500000 x=44795 y=51702 z=9307 v=(-298,101,387) yaw_cd=24985 seq=3601 neigh=1 mqtt_ok=1 mqtt_exec_us=5416
+
+I (78212) COMMS_RX: TX: periodic packet seq=11 sent at 77400 ms
+
+I (78422) TASKS: STAB neigh=1 dist_cent_mm=5020 min_sep_mm=5020 heading_cos_x1000=-999
+
+I (78422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (78912) TASKS: PHYSICS exp_us=78406751 start_us=78399614 end_us=78399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3650 yaw_cd=27110 v=(149,-50,-194)
+
+I (78922) TASKS: RADIO exp_us=78413005 start_us=78409625 end_us=78409711 exec_us=86 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (78922) TASKS: FLOCK exp_us=78409876 start_us=78415758 end_us=78415945 exec_us=187 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(-298,101,387) cmd_yaw_rate=-18000
+
+I (78942) TASKS: TELE exp_us=78416474 start_us=78431994 end_us=78437916 exec_us=5922 lat_us=15520 jitter_us=22159 p_us=500000 x=44795 y=51697 z=9307 v=(-298,101,387) yaw_cd=26750 seq=3651 neigh=1 mqtt_ok=1 mqtt_exec_us=5864
+
+I (79422) TASKS: STAB neigh=1 dist_cent_mm=5019 min_sep_mm=5019 heading_cos_x1000=-999
+
+I (79422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (79912) TASKS: PHYSICS exp_us=79406751 start_us=79399614 end_us=79399628 exec_us=14 lat_us=-7137 jitter_us=-7 p_us=20000 seq=3700 yaw_cd=27135 v=(149,-50,-194)
+
+I (79922) TASKS: RADIO exp_us=79413005 start_us=79409625 end_us=79409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (79922) TASKS: FLOCK exp_us=79409876 start_us=79415841 end_us=79416025 exec_us=184 lat_us=5965 jitter_us=6226 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(-298,100,387) cmd_yaw_rate=-18000
+
+I (79942) TASKS: TELE exp_us=79416474 start_us=79432082 end_us=79437513 exec_us=5431 lat_us=15608 jitter_us=22251 p_us=500000 x=44795 y=51692 z=9307 v=(-298,100,387) yaw_cd=26775 seq=3701 neigh=1 mqtt_ok=1 mqtt_exec_us=5374
+
+I (80422) TASKS: STAB neigh=1 dist_cent_mm=5018 min_sep_mm=5018 heading_cos_x1000=-999
+
+I (80422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (80912) TASKS: PHYSICS exp_us=80406751 start_us=80399621 end_us=80399663 exec_us=42 lat_us=-7130 jitter_us=7 p_us=20000 seq=3750 yaw_cd=27370 v=(148,-50,-194)
+
+I (80922) TASKS: RADIO exp_us=80413005 start_us=80409625 end_us=80409707 exec_us=82 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (80922) TASKS: FLOCK exp_us=80409876 start_us=80415801 end_us=80415993 exec_us=192 lat_us=5925 jitter_us=6186 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(-297,100,387) cmd_yaw_rate=-18000
+
+I (80942) TASKS: TELE exp_us=80416474 start_us=80432041 end_us=80437512 exec_us=5471 lat_us=15567 jitter_us=22194 p_us=500000 x=44800 y=51687 z=9307 v=(-297,100,387) yaw_cd=27010 seq=3751 neigh=1 mqtt_ok=1 mqtt_exec_us=5414
+
+I (81422) TASKS: STAB neigh=1 dist_cent_mm=5017 min_sep_mm=5017 heading_cos_x1000=-999
+
+I (81422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (81912) TASKS: PHYSICS exp_us=81406751 start_us=81399614 end_us=81399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3800 yaw_cd=27375 v=(148,-49,-194)
+
+I (81922) TASKS: RADIO exp_us=81413005 start_us=81410303 end_us=81410392 exec_us=89 lat_us=-2702 jitter_us=678 p_us=1000000 neigh=1 age_max_ms=4209
+
+I (81922) TASKS: FLOCK exp_us=81409876 start_us=81415935 end_us=81416127 exec_us=192 lat_us=6059 jitter_us=6320 p_us=100000 neigh=1 age_max_ms=4214 cmd_v=(-297,100,387) cmd_yaw_rate=-18000
+
+I (81942) TASKS: TELE exp_us=81416474 start_us=81432171 end_us=81437639 exec_us=5468 lat_us=15697 jitter_us=22340 p_us=500000 x=44800 y=51687 z=9307 v=(-297,100,387) yaw_cd=27015 seq=3801 neigh=1 mqtt_ok=1 mqtt_exec_us=5411
+
+I (82422) TASKS: STAB neigh=1 dist_cent_mm=5017 min_sep_mm=5017 heading_cos_x1000=-999
+
+I (82422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (82912) TASKS: PHYSICS exp_us=82406751 start_us=82399614 end_us=82399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3850 yaw_cd=27375 v=(148,-49,-194)
+
+I (82922) TASKS: RADIO exp_us=82413005 start_us=82409625 end_us=82409711 exec_us=86 lat_us=-3380 jitter_us=-678 p_us=1000000 neigh=1 age_max_ms=5208
+
+I (82922) TASKS: FLOCK exp_us=82409876 start_us=82416022 end_us=82416218 exec_us=196 lat_us=6146 jitter_us=6407 p_us=100000 neigh=1 age_max_ms=5215 cmd_v=(-297,100,387) cmd_yaw_rate=-18000
+
+I (82942) TASKS: TELE exp_us=82416474 start_us=82432258 end_us=82438453 exec_us=6195 lat_us=15784 jitter_us=22427 p_us=500000 x=44800 y=51687 z=9307 v=(-297,100,387) yaw_cd=27015 seq=3851 neigh=1 mqtt_ok=1 mqtt_exec_us=6138
+
+I (83422) TASKS: STAB neigh=1 dist_cent_mm=5017 min_sep_mm=5017 heading_cos_x1000=-999
+
+I (83422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (83712) COMMS_RX: RX: from 90:15:06:da:cf:d0 seq=13 pos=(47537,50755,5740)
+
+I (83912) TASKS: PHYSICS exp_us=83406751 start_us=83399614 end_us=83399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3900 yaw_cd=22880 v=(-278,94,362)
+
+I (83922) TASKS: RADIO exp_us=83413005 start_us=83409624 end_us=83409715 exec_us=91 lat_us=-3381 jitter_us=-1 p_us=1000000 neigh=1 age_max_ms=208
+
+I (83922) TASKS: FLOCK exp_us=83409876 start_us=83415673 end_us=83415858 exec_us=185 lat_us=5797 jitter_us=6058 p_us=100000 neigh=1 age_max_ms=214 cmd_v=(-280,94,366) cmd_yaw_rate=-18000
+
+I (83942) TASKS: TELE exp_us=83416474 start_us=83431739 end_us=83437210 exec_us=5471 lat_us=15265 jitter_us=21904 p_us=500000 x=44730 y=51701 z=9407 v=(-280,94,366) yaw_cd=22520 seq=3901 neigh=1 mqtt_ok=1 mqtt_exec_us=5412
+
+I (84212) COMMS_RX: TX: periodic packet seq=12 sent at 83400 ms
+
+I (84422) TASKS: STAB neigh=1 dist_cent_mm=4920 min_sep_mm=4920 heading_cos_x1000=999
+
+I (84422) TASKS: ENERGY lora_tx=1 lora_rx_ok=1 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (84912) TASKS: PHYSICS exp_us=84406751 start_us=84399614 end_us=84399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=3950 yaw_cd=18925 v=(149,-49,-195)
+
+I (84922) TASKS: RADIO exp_us=84413005 start_us=84409625 end_us=84409699 exec_us=74 lat_us=-3380 jitter_us=1 p_us=1000000 neigh=1 age_max_ms=1208
+
+I (84922) TASKS: FLOCK exp_us=84409876 start_us=84415758 end_us=84415917 exec_us=159 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=1214 cmd_v=(148,-49,-195) cmd_yaw_rate=18000
+
+I (84942) TASKS: TELE exp_us=84416474 start_us=84431911 end_us=84437380 exec_us=5469 lat_us=15437 jitter_us=22076 p_us=500000 x=44557 y=51740 z=9647 v=(148,-49,-195) yaw_cd=19285 seq=3951 neigh=1 mqtt_ok=1 mqtt_exec_us=5411
+
+I (85422) TASKS: STAB neigh=1 dist_cent_mm=4987 min_sep_mm=4987 heading_cos_x1000=-999
+
+I (85422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (85912) TASKS: PHYSICS exp_us=85406751 start_us=85399614 end_us=85399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=4000 yaw_cd=25945 v=(149,-49,-195)
+
+I (85922) TASKS: RADIO exp_us=85413005 start_us=85409625 end_us=85409715 exec_us=90 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=2208
+
+I (85922) TASKS: FLOCK exp_us=85409876 start_us=85415746 end_us=85415933 exec_us=187 lat_us=5870 jitter_us=6131 p_us=100000 neigh=1 age_max_ms=2214 cmd_v=(148,-49,-195) cmd_yaw_rate=8705
+
+I (85942) TASKS: TELE exp_us=85416474 start_us=85431808 end_us=85437400 exec_us=5592 lat_us=15334 jitter_us=21977 p_us=500000 x=44552 y=51755 z=9647 v=(148,-49,-195) yaw_cd=26119 seq=4001 neigh=1 mqtt_ok=1 mqtt_exec_us=5534
+
+I (86422) TASKS: STAB neigh=1 dist_cent_mm=4992 min_sep_mm=4992 heading_cos_x1000=-999
+
+I (86422) TASKS: ENERGY lora_tx=0 lora_rx_ok=0 lora_rx_mac_fail=0 mqtt_ok=2 mqtt_fail=0
+
+I (86912) TASKS: PHYSICS exp_us=86406751 start_us=86399614 end_us=86399628 exec_us=14 lat_us=-7137 jitter_us=0 p_us=20000 seq=4050 yaw_cd=26480 v=(149,-50,-195)
+
+I (86922) TASKS: RADIO exp_us=86413005 start_us=86409625 end_us=86409711 exec_us=86 lat_us=-3380 jitter_us=0 p_us=1000000 neigh=1 age_max_ms=3208
+
+I (86922) TASKS: FLOCK exp_us=86409876 start_us=86415758 end_us=86415945 exec_us=187 lat_us=5882 jitter_us=6143 p_us=100000 neigh=1 age_max_ms=3214 cmd_v=(149,-50,-195) cmd_yaw_rate=6000
+
+I (86942) TASKS: TELE exp_us=86416474 start_us=86431844 end_us=86437324 exec_us=5480 lat_us=15370 jitter_us=21982 p_us=500000 x=44547 y=51759 z=9647 v=(149,-50,-195) yaw_cd=26600 seq=4051 neigh=1 mqtt_ok=1 mqtt_exec_us=5403
+
