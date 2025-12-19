@@ -14,8 +14,17 @@ extern "C" {
 #include "config.hpp"
 #include "comms.hpp"
 #include "tasks.hpp"
+#include "mqtt_publish.hpp"
+#include "attacks.hpp"
 
 static const char* TAG = "MAIN";
+
+const uint8_t TEAM_KEY[16] = {
+        0x00, 0x01, 0x02, 0x03,
+        0x04, 0x05, 0x06, 0x07,
+        0x08, 0x09, 0x0A, 0x0B,
+        0x0C, 0x0D, 0x0E, 0x0F,
+    };
 
 static void init_nvs()
 {
@@ -47,7 +56,26 @@ static void init_sntp()
 // ----------------------------
 static void init_mqtt()
 {
-    ESP_LOGI(TAG, "MQTT init placeholder");
+    mqtt_pub::init();
+}
+
+static void init_attacks()
+{
+    AttackMode mode = AttackMode::None;
+    
+    if (ENABLE_ATTACK_REPLAY) {
+        mode = AttackMode::Replay;
+    } else if (ENABLE_ATTACK_GHOST) {
+        mode = AttackMode::Ghost;
+    } else if (ENABLE_ATTACK_FALSEDATA) {
+        mode = AttackMode::FalseData;
+    } else if (ENABLE_ATTACK_FASTTX) {
+        mode = AttackMode::FastTx;
+    } else if (ENABLE_ATTACK_INVALIDCMAC) {
+        mode = AttackMode::InvalidCmac;
+    }
+    
+    attacks::set_attack_mode(mode);
 }
 
 extern "C" void app_main(void)
@@ -56,14 +84,18 @@ extern "C" void app_main(void)
 
     init_nvs();
 
-    // Call the real wifi_connect()
     ESP_ERROR_CHECK(wifi_connect());
 
     init_sntp();
     init_mqtt();
+    init_attacks();
 
     comms::radio_init();
     comms::start_radio_rx();
 
     tasks::start_all_tasks();
+
+    ESP_LOGI("MAIN", "CONFIG PHYSICS_HZ=%d FLOCK_HZ=%d RADIO_HZ=%d TELEMETRY_HZ=%d",
+         PHYSICS_HZ, FLOCK_HZ, RADIO_HZ, TELEMETRY_HZ);
+
 }

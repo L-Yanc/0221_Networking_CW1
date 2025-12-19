@@ -4,8 +4,6 @@
 // include RadioLib
 #include <RadioLib.h>
 
-// this example only works on ESP32 and is unlikely to work on ESP32S2/S3 etc.
-// if you need high portability, you should probably use Arduino anyway ...
 #if CONFIG_IDF_TARGET_ESP32 == 0
   #error This example HAL only supports ESP32 targets. Support for ESP32S2/S3 etc. can be added by adjusting this file to user needs.
 #endif
@@ -125,12 +123,10 @@ class EspHal : public RadioLibHal {
     }
 
     void init() override {
-      // we only need to init the SPI here
       spiBegin();
     }
 
     void term() override {
-      // we only need to stop the SPI here
       spiEnd();
     }
 
@@ -178,8 +174,6 @@ class EspHal : public RadioLibHal {
       gpio_install_isr_service((int)ESP_INTR_FLAG_IRAM);
       gpio_set_intr_type((gpio_num_t)interruptNum, (gpio_int_type_t)(mode & 0x7));
 
-      // this uses function typecasting, which is not defined when the functions have different signatures
-      // untested and might not work
       gpio_isr_handler_add((gpio_num_t)interruptNum, (void (*)(void*))interruptCb, NULL);
     }
 
@@ -281,8 +275,6 @@ class EspHal : public RadioLibHal {
     }
 
     void spiBeginTransaction() {
-      // not needed - in ESP32 Arduino core, this function
-      // repeats clock div, mode and bit order configuration
     }
 
     uint8_t spiTransferByte(uint8_t b) {

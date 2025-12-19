@@ -34,13 +34,6 @@ namespace attacks {
     // Attack application
     // --------------------------------------------------------
 
-    // Apply attack logic to an outgoing packet in-place.
-    //
-    // - mode      : current attack mode
-    // - pkt       : packet about to be sent (fields can be modified)
-    // - now_ms    : current time since boot in ms (esp_timer_get_time()/1000)
-    //
-    // This is called from radio_task BEFORE comms::send_packet(pkt).
     void apply_attacks(
         AttackMode mode,
         comms::LoraPacket& pkt,
@@ -51,10 +44,6 @@ namespace attacks {
     // Fast TX helper
     // --------------------------------------------------------
 
-    // Some attacks (e.g. FastTx) might want to send more often than RADIO_HZ.
-    // You can use this helper in radio_task to decide whether to skip or send.
-    //
-    // Returns true if we should send a packet at this tick, false if we should skip.
     bool should_send_this_tick(
         AttackMode mode,
         uint32_t now_ms

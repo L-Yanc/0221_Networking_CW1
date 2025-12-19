@@ -111,4 +111,17 @@ namespace comms {
     // This is a copy so caller can iterate without holding a lock
     std::vector<NeighbourEntry> get_neighbour_snapshot(uint32_t now_ms);
 
+    // --------------------------------------------------------
+    // Communication statistics
+    // --------------------------------------------------------
+    struct CommsStats {
+        uint32_t lora_tx;
+        uint32_t lora_rx_ok;
+        uint32_t lora_rx_mac_fail;
+    };
+
+    // returns counts since last call and resets them to 0
+    CommsStats get_and_reset_stats();
+
+
 } // namespace comms

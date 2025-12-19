@@ -25,17 +25,11 @@ extern "C" {
 #include "config.hpp"
 #include "tasks.hpp"
 #include "sntp_time.h"
+#include "attacks.hpp"
 
 namespace comms {
 
     static const char* TAG = "COMMS";
-
-    const uint8_t TEAM_KEY[16] = {
-        0x00, 0x01, 0x02, 0x03,
-        0x04, 0x05, 0x06, 0x07,
-        0x08, 0x09, 0x0A, 0x0B,
-        0x0C, 0x0D, 0x0E, 0x0F,
-    };
 
 #ifndef LORA_SPI_SCK
     #define LORA_SPI_SCK   GPIO_NUM_5
@@ -67,6 +61,10 @@ namespace comms {
 
     static NeighbourEntry s_neighbours[MAX_NEIGHBOURS];
     static SemaphoreHandle_t s_neighbour_mutex = nullptr;
+
+    static uint32_t s_lora_tx = 0;
+    static uint32_t s_lora_rx_ok = 0;
+    static uint32_t s_lora_rx_mac_fail = 0;
 
     class NeighbourLock {
     public:
@@ -176,9 +174,6 @@ namespace comms {
         return true;
     }
 
-        // --------------------------------------------------------
-    // Helper: build a periodic TX packet
-    // (dummy physics: centre of world, zero velocity)
     // --------------------------------------------------------
     // Helper: build a TX packet with real state
     // --------------------------------------------------------
@@ -244,13 +239,18 @@ namespace comms {
             uint32_t now_ms = static_cast<uint32_t>(esp_timer_get_time() / 1000);
 
             // --- TX every 6 seconds ---
-            if (now_ms - last_tx_ms >= 6000) {
+            uint32_t elapsed = (now_ms >= last_tx_ms) ? (now_ms - last_tx_ms) : (UINT32_MAX - last_tx_ms + now_ms);
+            if (elapsed >= 6000) {
                 LoraPacket pkt{};
                 build_periodic_packet(pkt);
 
+                // Apply attacks before sending
+                attacks::apply_attacks(attacks::get_attack_mode(), pkt, now_ms);
+
                 // Temporarily leave RX mode to transmit
                 if (send_packet(pkt)) {
-                    ESP_LOGI(TAG_RX, "TX: periodic packet sent at %u ms", (unsigned)now_ms);
+                    ESP_LOGI(TAG_RX, "TX: periodic packet seq=%u sent at %u ms", (unsigned)pkt.seq_number, (unsigned)now_ms);
+                    s_lora_tx++;
                 } else {
                     ESP_LOGW(TAG_RX, "TX: send_packet failed");
                 }
@@ -313,6 +313,7 @@ namespace comms {
         if (!verify_cmac(reinterpret_cast<const uint8_t*>(&pkt),
                         mac_input_len,
                         rx_mac_tag)) {
+            s_lora_rx_mac_fail++;
             return;
         }
         
@@ -320,6 +321,7 @@ namespace comms {
         std::memcpy(pkt.mac_tag, rx_mac_tag, MAC_TAG_LEN);
 
         update_neighbour_from_packet(pkt, now_ms);
+        s_lora_rx_ok++;
         
         // Log successful RX with what and from info
         ESP_LOGI(TAG_RX, "RX: from %02x:%02x:%02x:%02x:%02x:%02x seq=%u pos=(%lu,%lu,%lu)",
@@ -516,5 +518,21 @@ namespace comms {
         }
         return result;
     }
+
+    CommsStats get_and_reset_stats()
+    {
+        CommsStats out{
+            .lora_tx = s_lora_tx,
+            .lora_rx_ok = s_lora_rx_ok,
+            .lora_rx_mac_fail = s_lora_rx_mac_fail
+        };
+
+        s_lora_tx = 0;
+        s_lora_rx_ok = 0;
+        s_lora_rx_mac_fail = 0;
+
+        return out;
+    }
+
 
 } // namespace comms

@@ -30,13 +30,37 @@ namespace attacks {
     static uint32_t s_last_fasttx_ms = 0;
 
     // --------------------------------------------------------
+    // Helper: convert mode to string
+    // --------------------------------------------------------
+
+    static const char* mode_to_string(AttackMode mode)
+    {
+        switch (mode) {
+        case AttackMode::None:
+            return "None";
+        case AttackMode::Replay:
+            return "Replay";
+        case AttackMode::Ghost:
+            return "Ghost";
+        case AttackMode::FalseData:
+            return "FalseData";
+        case AttackMode::FastTx:
+            return "FastTx";
+        case AttackMode::InvalidCmac:
+            return "InvalidCmac";
+        default:
+            return "Unknown";
+        }
+    }
+
+    // --------------------------------------------------------
     // Mode control
     // --------------------------------------------------------
 
     void set_attack_mode(AttackMode mode)
     {
         s_mode = mode;
-        ESP_LOGI(TAG, "Attack mode set to %d", static_cast<int>(mode));
+        ESP_LOGI(TAG, "Attack mode set to %s", mode_to_string(mode));
     }
 
     AttackMode get_attack_mode()
@@ -47,9 +71,9 @@ namespace attacks {
     AttackMode next_attack_mode()
     {
         int m = static_cast<int>(s_mode);
-        m = (m + 1) % 6; // we currently have 6 modes (0..5)
+        m = (m + 1) % 6;
         s_mode = static_cast<AttackMode>(m);
-        ESP_LOGI(TAG, "Attack mode cycled to %d", m);
+        ESP_LOGI(TAG, "Attack mode cycled to %s", mode_to_string(s_mode));
         return s_mode;
     }
 
@@ -66,7 +90,6 @@ namespace attacks {
 
     static bool replay_buffer_get_any(comms::LoraPacket& out_pkt)
     {
-        // Very simple: pick the first in_use you find
         for (int i = 0; i < REPLAY_BUFFER_SIZE; ++i) {
             if (s_replay_buffer[i].in_use) {
                 out_pkt = s_replay_buffer[i].pkt;
@@ -100,8 +123,7 @@ namespace attacks {
             // Use an old packet as the outgoing content
             pkt = old_pkt;
 
-            // Optionally nudge timestamp slightly so it's not frozen in time
-            pkt.ts_ms ^= 0x007F; // tiny, harmless perturbation
+            pkt.ts_ms ^= 0x007F;
         }
     }
 
@@ -190,6 +212,8 @@ namespace attacks {
         uint32_t now_ms
     )
     {
+        const int64_t t_start_us = esp_timer_get_time();
+        
         switch (mode) {
         case AttackMode::None:
             apply_none(pkt, now_ms);
@@ -197,16 +221,19 @@ namespace attacks {
         case AttackMode::Replay:
 #if ENABLE_ATTACK_REPLAY
             apply_replay(pkt, now_ms);
+            ESP_LOGI(TAG, "ATTACK Replay applied");
 #endif
             break;
         case AttackMode::Ghost:
 #if ENABLE_ATTACK_GHOST
             apply_ghost(pkt, now_ms);
+            ESP_LOGI(TAG, "ATTACK Ghost applied");
 #endif
             break;
         case AttackMode::FalseData:
 #if ENABLE_ATTACK_FALSE_DATA
             apply_false_data(pkt, now_ms);
+            ESP_LOGI(TAG, "ATTACK FalseData applied");
 #endif
             break;
         case AttackMode::FastTx:
@@ -217,11 +244,18 @@ namespace attacks {
         case AttackMode::InvalidCmac:
 #if ENABLE_ATTACK_INVALID_CMAC
             apply_invalid_cmac(pkt, now_ms);
+            ESP_LOGI(TAG, "ATTACK InvalidCmac applied");
 #endif
             break;
         default:
             apply_none(pkt, now_ms);
             break;
+        }
+        
+        const int64_t t_end_us = esp_timer_get_time();
+        if (mode != AttackMode::None) {
+            ESP_LOGI(TAG, "ATTACK %s exec_us=%lld",
+                    mode_to_string(mode), (long long)(t_end_us - t_start_us));
         }
     }
 
@@ -244,6 +278,7 @@ namespace attacks {
         }
 
         s_last_fasttx_ms = now_ms;
+        ESP_LOGI(TAG, "ATTACK FastTx packet sent");
         return true;
     }
 

@@ -47,4 +47,9 @@ namespace control {
         const std::vector<comms::NeighbourEntry>& neighbours
     );
 
+    FlockMetrics compute_flock_metrics(
+        const LocalState& self,
+        const std::vector<comms::NeighbourEntry>& neighbours
+    );
+
 } // namespace control

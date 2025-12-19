@@ -3,7 +3,7 @@
 // ------------------------------------------------------------ WiFi
 // 0 - Home WiFi
 // 1 - Eduroam
-#define USE_EDUROAM 1
+#define USE_EDUROAM 0
 
 #if USE_EDUROAM
 #define WIFI_SSID "eduroam"
@@ -44,6 +44,8 @@ static const char *TAG = "WIFI_CONNECT";
 // Event group to signal when we are connected
 static EventGroupHandle_t s_wifi_event_group;
 static const int WIFI_CONNECTED_BIT = BIT0;
+static int s_retry_num = 0;
+static const int MAX_RETRY = 5;
 
 /**
  * @brief Event handler for Wi-Fi and IP events.
@@ -62,13 +64,19 @@ static void wifi_event_handler(void* arg, esp_event_base_t base, int32_t id, voi
         // This event fires when Wi-Fi is started, now we can connect.
         esp_wifi_connect();
     } else if (base == WIFI_EVENT && id == WIFI_EVENT_STA_DISCONNECTED) {
-        // Simple retry-forever logic.
-        ESP_LOGW(TAG, "Disconnected, retrying...");
-        esp_wifi_connect();
+        // Retry with backoff
+        if (s_retry_num < MAX_RETRY) {
+            esp_wifi_connect();
+            s_retry_num++;
+            ESP_LOGW(TAG, "Retrying connection (attempt %d/%d)...", s_retry_num, MAX_RETRY);
+        } else {
+            ESP_LOGE(TAG, "Failed to connect after %d attempts", MAX_RETRY);
+        }
     } else if (base == IP_EVENT && id == IP_EVENT_STA_GOT_IP) {
         // We got an IP address!
         const ip_event_got_ip_t* e = (const ip_event_got_ip_t*)data;
         ESP_LOGI(TAG, "Got IP: %d.%d.%d.%d", IP2STR(&e->ip_info.ip));
+        s_retry_num = 0;  // Reset retry counter on success
         // Set the bit to unblock the wifi_connect_init function
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }

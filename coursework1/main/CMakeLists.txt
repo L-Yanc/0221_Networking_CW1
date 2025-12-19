@@ -7,6 +7,7 @@ idf_component_register(
         "src/attacks.cpp"
         "src/sntp_time.c"
         "src/wifi_connect.c"
+        "src/mqtt_publish.cpp"
     INCLUDE_DIRS
         "include"
     REQUIRES
@@ -16,7 +17,9 @@ idf_component_register(
         esp_netif
         nvs_flash
         mbedtls
+        mqtt
     PRIV_REQUIRES
         wpa_supplicant
         esp_driver_gpio
+        fatfs
 )
